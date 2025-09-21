@@ -1,3 +1,4 @@
+import footerItems from './footer'
 import navItems from './navbar'
 
-export { navItems }
+export { navItems, footerItems }

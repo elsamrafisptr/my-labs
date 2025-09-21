@@ -14,7 +14,7 @@ import ThemeToggle from './theme-toggle'
 const navList = Object.entries(navItems).map(([path, { name }]) => ({ path, name }))
 
 const Navbar = () => {
-  const pathname = usePathname() || '/'
+  const pathname = usePathname()
 
   const links = useMemo(() => navList, [])
 
