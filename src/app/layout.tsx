@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/client-utils'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 
@@ -43,10 +43,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className="flex items-start justify-center"
+    >
       <body
         className={cn(
-          'mx-4 mt-8 max-w-xl bg-stone-200 text-stone-800 antialiased lg:mx-auto dark:bg-stone-800 dark:text-stone-200',
+          'mx-4 max-w-xl bg-stone-200 text-stone-800 antialiased lg:mx-auto dark:bg-stone-800 dark:text-stone-200',
           GeistSans.variable,
           GeistMono.variable
         )}
