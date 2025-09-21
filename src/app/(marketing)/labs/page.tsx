@@ -1,5 +1,7 @@
+import Labs from '@/modules/labs'
+
 const Page = () => {
-  return <div>Page</div>
+  return <Labs />
 }
 
 export default Page

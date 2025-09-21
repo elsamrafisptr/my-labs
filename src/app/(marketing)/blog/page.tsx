@@ -1,4 +1,4 @@
-import { BlogPosts } from '@/components/elements/posts'
+import Blog from '@/modules/blog'
 
 export const metadata = {
   title: 'Blog',
@@ -6,10 +6,5 @@ export const metadata = {
 }
 
 export default function Page() {
-  return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">My Blog</h1>
-      <BlogPosts />
-    </section>
-  )
+  return <Blog />
 }
