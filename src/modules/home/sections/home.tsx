@@ -2,11 +2,13 @@ const Home = () => {
   return (
     <main className="flex flex-col gap-6">
       <section>
-        <h1 className="text-xl font-semibold dark:text-stone-50">Elsam Rafi Saputra</h1>
-        <h2 className="text-md mb-4 font-semibold text-stone-700 dark:text-stone-300">
-          Software Engineer
+        <h1 className="text-lg font-semibold md:text-xl dark:text-stone-50">
+          Elsam Rafi Saputra
+        </h1>
+        <h2 className="mb-4 text-sm font-medium text-stone-700 md:text-base dark:text-stone-300">
+          Remote Software Engineer
         </h2>
-        <p className="mb-4 text-left text-stone-700 dark:text-stone-300">
+        <p className="mb-4 text-justify text-sm text-stone-700 md:text-base dark:text-stone-300">
           Just a software engineer with a strong focus on design, full-stack, and
           marketing. Broader challenges transitioned me became passionate about
           entrepreneurship, software engineering, and artificial intelligence (AI).

@@ -45,11 +45,11 @@ const Navbar = () => {
             alt="logo"
             width={32}
             height={32}
-            className="rounded-full"
+            className="aspect-square rounded-full border border-stone-700 shadow-md shadow-stone-700/20 dark:border-stone-200 dark:shadow-stone-200/20"
           />
         </Link>
 
-        <div className="flex gap-2">
+        <div className="flex gap-6">
           {links.map(({ path, name }) => {
             const isActive =
               pathname === path || (path !== '/' && pathname.startsWith(path))
@@ -57,7 +57,7 @@ const Navbar = () => {
               <Link key={path} href={path} className="relative m-1">
                 <span
                   className={cn(
-                    'inline-block px-2 py-1 align-middle capitalize transition-colors duration-200',
+                    'inline-block py-1 align-middle capitalize transition-colors duration-200',
                     isActive
                       ? 'text-stone-900 dark:text-white'
                       : 'hover:text-stone-800 dark:hover:text-stone-200'

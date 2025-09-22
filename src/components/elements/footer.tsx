@@ -12,7 +12,7 @@ function Footer() {
   return (
     <footer className="fixed bottom-0 mb-6">
       <div className="flex w-full items-center justify-between">
-        <ul className="font-sm mt-8 flex w-full flex-col space-y-2 space-x-0 text-neutral-600 md:flex-row md:space-y-0 md:space-x-4 dark:text-neutral-300">
+        <ul className="font-sm mt-8 flex w-full space-y-2 space-x-2 text-neutral-600 md:space-y-0 md:space-x-4 dark:text-neutral-300">
           {links.map(({ path, name }) => {
             return (
               <li key={path}>
