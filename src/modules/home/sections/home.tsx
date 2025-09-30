@@ -2,26 +2,26 @@ import ProjectCard from '@/components/elements/project-card'
 
 const projects = [
   {
-    name: '',
-    description: '',
-    website: '',
-    github: '',
-    logo: '',
-    story: '',
-    stack: [''],
-    thumbnail: '',
-    year: ''
+    name: 'Evaly',
+    description: 'All-in-One Assessment Platform',
+    website: 'https://evaly.io',
+    github: 'https://github.com/fahreziadh/evaly',
+    logo: '/evaly.webp',
+    story: '/project/evaly',
+    stack: ['Open-source', 'Next.js', 'Tailwindcss', 'Supabase (PostgreSQL)', 'Redis'],
+    thumbnail: '/img/evaly.webp',
+    year: '2024'
   },
   {
-    name: '',
-    description: '',
-    website: '',
-    github: '',
-    logo: '',
-    story: '',
-    stack: [''],
-    thumbnail: '',
-    year: ''
+    name: 'Typehere',
+    description: 'A Simple Open Source Form Builder',
+    website: 'https://typehere.fun',
+    github: 'https://github.com/fahreziadh/typehere',
+    logo: '/typehere.webp',
+    story: '/project/typehere',
+    stack: ['Open-source', 'Sveltekit', 'Tailwindcss', 'LibSQL(SQLite)', 'Cloudflare'],
+    thumbnail: '/img/typehere.webp',
+    year: '2024'
   }
 ]
 
@@ -48,7 +48,7 @@ const Home = () => {
         <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
           Pinned Projects
         </h3>
-        <div className="mt-4 flex flex-col gap-8">
+        <div className="mt-4 grid grid-cols-2 gap-6 md:gap-8">
           {projects.map(project => (
             <ProjectCard
               key={project.name.toLocaleLowerCase().replace(' ', '-')}
@@ -61,11 +61,11 @@ const Home = () => {
           ))}
         </div>
       </section>
-      {/* <section>
+      <section>
         <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
           Latest Resources
         </h3>
-      </section> */}
+      </section>
       <section>
         <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50"></h3>
       </section>

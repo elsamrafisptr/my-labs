@@ -10,7 +10,7 @@ function Footer() {
   const links = useMemo(() => footList, [])
 
   return (
-    <footer className="fixed bottom-0 mb-6">
+    <footer className="mb-6">
       <div className="flex w-full items-center justify-between">
         <ul className="font-sm mt-8 flex w-full space-y-2 space-x-2 text-neutral-600 md:space-y-0 md:space-x-4 dark:text-neutral-300">
           {links.map(({ path, name }) => {

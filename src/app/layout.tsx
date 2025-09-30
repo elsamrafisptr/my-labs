@@ -46,7 +46,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'mx-4 max-w-xl bg-stone-200 text-stone-800 antialiased lg:mx-auto dark:bg-stone-800 dark:text-stone-200',
+          'no-scrollbar mx-4 max-w-xl bg-stone-200 text-stone-800 antialiased lg:mx-auto dark:bg-stone-800 dark:text-stone-200',
           GeistSans.variable,
           GeistMono.variable
         )}

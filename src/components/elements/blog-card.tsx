@@ -1,16 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface ProjectCardProps {
+interface BlogCardProps {
   name: string
   href: string
   imgUrl?: string
   year: number
   desc: string
-  stack: string[]
 }
 
-const ProjectCard = ({ name, href, desc, imgUrl, year, stack }: ProjectCardProps) => {
+const BlogCard = ({ name, href, desc, imgUrl, year }: BlogCardProps) => {
   return (
     <Link
       href={href}
@@ -36,16 +35,10 @@ const ProjectCard = ({ name, href, desc, imgUrl, year, stack }: ProjectCardProps
           </div>
         </div>
         <h2 className="opacity-70">{desc}</h2>
-        <h2 className="mt-2 flex flex-row flex-wrap gap-1.5 text-xs opacity-70">
-          {stack.map(e => (
-            <span key={e} className="bg-foreground/5 text-foreground/60 px-1.5 py-0.5">
-              {e}
-            </span>
-          ))}
-        </h2>
+        <span>Read More</span>
       </div>
     </Link>
   )
 }
 
-export default ProjectCard
+export default BlogCard

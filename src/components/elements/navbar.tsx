@@ -36,7 +36,7 @@ const Navbar = () => {
       initial={initialProp}
       animate={initialProp === false ? undefined : { opacity: 1, y: 0 }}
       transition={{ duration: 0.2, ease: 'easeInOut' }}
-      className="sticky top-0 container my-12 flex max-w-[680px] items-center justify-between gap-4 lg:my-10"
+      className="sticky top-0 container my-8 flex max-w-[680px] items-center justify-between gap-4 bg-stone-200 py-4 lg:my-10 dark:bg-stone-800"
     >
       <div className="flex items-center gap-4 tracking-tight md:gap-6">
         <Link href="/" className="relative flex items-center py-2">
