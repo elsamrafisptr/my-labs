@@ -29,20 +29,18 @@ const ProjectCard = ({ name, href, desc, imgUrl, year, stack }: ProjectCardProps
       )}
 
       <div className="grow">
-        <div className="flex w-full flex-row items-start justify-between">
-          <p>{name}</p>
-          <div className="flex flex-row items-center gap-2">
-            <p className="text-xs opacity-50">{year}</p>
-          </div>
+        <div className="flex w-full flex-row items-center justify-between">
+          <h1 className="font-medium">{name}</h1>
+          <p className="text-xs opacity-50">{year}</p>
         </div>
-        <h2 className="opacity-70">{desc}</h2>
-        <h2 className="mt-2 flex flex-row flex-wrap gap-1.5 text-xs opacity-70">
+        <h2 className="text-sm opacity-70">{desc}</h2>
+        <h3 className="mt-4 flex flex-row flex-wrap gap-1.5 text-xs opacity-70">
           {stack.map(e => (
             <span key={e} className="bg-foreground/5 text-foreground/60 px-1.5 py-0.5">
               {e}
             </span>
           ))}
-        </h2>
+        </h3>
       </div>
     </Link>
   )

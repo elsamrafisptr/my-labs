@@ -1,3 +1,4 @@
+import { BlogPosts } from '@/components/elements/posts'
 import ProjectCard from '@/components/elements/project-card'
 
 const projects = [
@@ -65,6 +66,7 @@ const Home = () => {
         <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
           Latest Resources
         </h3>
+        <BlogPosts />
       </section>
       <section>
         <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50"></h3>

@@ -1,12 +1,12 @@
-import Link from 'next/link'
-
 import { formatDate, getBlogPosts } from '@/lib/utils'
+
+import BlogCard from './blog-card'
 
 export function BlogPosts() {
   const allBlogs = getBlogPosts()
 
   return (
-    <div>
+    <div className="mt-4 grid grid-cols-1 gap-6 md:gap-8">
       {allBlogs
         .sort((a, b) => {
           if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
@@ -14,22 +14,18 @@ export function BlogPosts() {
           }
           return 1
         })
-        .map(post => (
-          <Link
-            key={post.slug}
-            className="mb-4 flex flex-col space-y-1"
-            href={`/blog/${post.slug}`}
-          >
-            <div className="flex w-full flex-col space-x-0 md:flex-row md:space-x-2">
-              <p className="w-[100px] text-neutral-600 tabular-nums dark:text-neutral-400">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="tracking-tight text-neutral-900 dark:text-neutral-100">
-                {post.metadata.title}
-              </p>
-            </div>
-          </Link>
-        ))}
+        .map(post => {
+          return (
+            <BlogCard
+              key={post.metadata.title.toLocaleLowerCase().replace(' ', '-')}
+              name={post.metadata.title}
+              href={post.slug}
+              date={formatDate(post.metadata.publishedAt)}
+              imgUrl={post.metadata.image}
+              views={199}
+            />
+          )
+        })}
     </div>
   )
 }
