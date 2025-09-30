@@ -13,9 +13,196 @@ export const resume: Readonly<ResumeProps> = {
   footer: [],
 
   skills: [],
-  works: [],
-  educations: [],
-  organizations: [],
-  projects: [],
-  achievements: []
+  works: [
+    {
+      title: 'Software Engineer',
+      name: 'SCHNAP',
+      desc: "Australia's premier electrical wholesaler and supplies",
+      location: 'Kingsgrove, Australia',
+      imageUrl: '',
+      href: '',
+      status: 'Full Time',
+      type: 'Remote',
+      website: 'https://schnap.com.au/',
+      start: 'March 2025',
+      end: 'Now',
+      content: ''
+    },
+    {
+      title: 'Fullstack Developer',
+      name: 'KAP TNN',
+      desc: ' Indonesia’s registered public accounting firm partner of BOKS International',
+      location: 'South Jakarta, Indonesia',
+      imageUrl: '',
+      href: '',
+      status: 'Full Time',
+      type: 'Remote',
+      website: 'https://kaptnn.com/',
+      start: 'September 2024',
+      end: 'August 2025',
+      content: ''
+    },
+    {
+      title: 'Frontend Developer',
+      name: 'School Tech Indonesia',
+      desc: 'Digital school management startup',
+      location: 'Malang, Indonesia',
+      imageUrl: '',
+      href: '',
+      status: 'Full Time',
+      type: 'Remote',
+      website: 'https://schooltechindonesia.com/',
+      start: 'August 2024',
+      end: 'December 2024',
+      content: ''
+    },
+    {
+      title: 'Fullstack Developer',
+      name: 'Betr Beta',
+      desc: 'Software agency',
+      location: 'Anson Road, Singapore',
+      imageUrl: '',
+      href: '',
+      status: 'Part Time',
+      type: 'Remote',
+      website: 'https://betrbeta.com/en-SG',
+      start: 'Juny 2024',
+      end: 'August 2024',
+      content: ''
+    }
+  ],
+  educations: [
+    {
+      title: 'Bachelor of Informatics',
+      name: 'Telkom University',
+      score: '(GPA 3.77/4.00) - Cumlaude',
+      location: 'Bandung, Indonesia',
+      imageUrl: '',
+      href: '',
+      website: 'https://telkomuniversity.ac.id/',
+      start: 'Septmber 2021',
+      end: 'January 2025',
+      content: ''
+    },
+    {
+      title: 'Cloud Computing Cohort',
+      name: 'Bangkit Academy 2024 By Google, GoTo, Tokopedia, Traveloka',
+      score: '(A, 87/100)',
+      location: 'Jakarta, Indonesia',
+      imageUrl: '',
+      href: '',
+      website: 'https://grow.google/intl/id_id/bangkit/',
+      start: 'September 2024',
+      end: 'January 2025',
+      content: ''
+    },
+    {
+      title: 'AWS Academy 2024 Backend Development',
+      name: 'AWS Backend Academy',
+      score: '(A, 100%)',
+      location: 'Jakarta, Indonesia',
+      imageUrl: '',
+      href: '',
+      website: 'https://aws.dicoding.com/',
+      start: 'March 2024',
+      end: 'September 2024',
+      content: ''
+    }
+  ],
+  organizations: [
+    {
+      title: 'Design and Publication Team',
+      name: 'Telkom University Education Movement',
+      desc: 'Social & Education',
+      location: 'Bandung, Indonesia',
+      imageUrl: '',
+      href: '',
+      type: 'On-Site',
+      website: '',
+      start: 'October 2021',
+      end: 'August 2022',
+      content: ''
+    },
+    {
+      title: 'Design and Motion Video Division',
+      name: 'Menebarmanfaat.id',
+      desc: 'Social & Personal Development',
+      location: 'Bandung, Indonesia',
+      imageUrl: '',
+      href: '',
+      type: 'Remote',
+      website: 'https://www.instagram.com/telu_edumovement/',
+      start: 'November 2021',
+      end: 'March 2022',
+      content: ''
+    }
+  ],
+  projects: [
+    {
+      accelerator: 'Microsoft Online Hackathon 2025 (elevAIte with Dicoding)',
+      name: 'Teman Anti Judi Online',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      website: '',
+      github: '',
+      year: '',
+      stacks: [],
+      content: ''
+    },
+    {
+      accelerator:
+        'International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS 2025)',
+      name: 'Growth Momentum (E-Learning Platform)',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      website: '',
+      github: '',
+      year: '',
+      stacks: [],
+      content: ''
+    },
+    {
+      accelerator: 'Bangkit Academy 2024 By Google, GoTo, Tokopedia, Traveloka',
+      name: 'StuntFree Stunting Prevention and Detection Apps',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      website: '',
+      github: '',
+      year: '',
+      stacks: [],
+      content: ''
+    }
+  ],
+  achievements: [
+    {
+      accelerator: '',
+      name: '',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      year: '',
+      credential: ''
+    },
+    {
+      accelerator: '',
+      name: '',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      year: '',
+      credential: ''
+    },
+    {
+      accelerator: '',
+      name: '',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      year: '',
+      credential: ''
+    }
+  ]
 } as const

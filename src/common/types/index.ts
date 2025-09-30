@@ -12,23 +12,68 @@ interface FooterProps {
 }
 
 interface WorkProps {
+  title: string
+  href: string
   name: string
+  desc: string
+  location: string
+  type: string
+  status: string
+  imageUrl: string
+  website: string
+  start: string
+  end: string
+  content: string
 }
 
 interface EducationProps {
+  title: string
+  href: string
   name: string
+  score: string
+  location: string
+  imageUrl: string
+  website: string
+  start: string
+  end: string
+  content: string
 }
 
 interface OrganizationProps {
+  title: string
+  href: string
   name: string
+  desc: string
+  location: string
+  type: string
+  imageUrl: string
+  website: string
+  start: string
+  end: string
+  content: string
 }
 
 interface ProjectProps {
+  accelerator: string
+  href: string
   name: string
+  desc: string
+  imageUrl: string
+  website: string
+  github: string
+  year: string
+  stacks: string[]
+  content: string
 }
 
 interface AchievementProps {
+  accelerator: string
+  href: string
   name: string
+  desc: string
+  imageUrl: string
+  credential: string
+  year: string
 }
 
 interface ResumeProps {
