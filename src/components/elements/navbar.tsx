@@ -39,9 +39,9 @@ const Navbar = () => {
       className="sticky top-0 container my-12 flex max-w-[680px] items-center justify-between gap-4 lg:my-10"
     >
       <div className="flex items-center gap-4 tracking-tight md:gap-6">
-        <Link href="/" className="relative m-1 flex items-center px-2 py-1">
+        <Link href="/" className="relative flex items-center py-2">
           <Image
-            src="/vercel.svg"
+            src="/profile.png"
             alt="logo"
             width={32}
             height={32}
