@@ -12,7 +12,7 @@ interface BlogCardProps {
 const BlogCard = ({ name, href, imgUrl, date, views }: BlogCardProps) => {
   return (
     <Link
-      href={'/blog/'+href}
+      href={'/blog/' + href}
       className="hover:bg-foreground/5 hover:border-foreground/10 border-foreground/0 group relative -m-2 flex gap-6 rounded-md border p-2 transition-colors duration-100 md:flex-row"
     >
       {imgUrl ? (
