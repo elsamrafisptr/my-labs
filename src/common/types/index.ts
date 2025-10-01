@@ -76,8 +76,19 @@ interface AchievementProps {
   year: string
 }
 
+interface CompetitionProps {
+  accelerator: string
+  href: string
+  name: string
+  desc: string
+  imageUrl: string
+  credential: string
+  year: string
+}
+
 interface ResumeProps {
   name: string
+  role: string
   initials: string
   url: string
   location: string
@@ -94,6 +105,7 @@ interface ResumeProps {
   organizations: OrganizationProps[]
   projects: ProjectProps[]
   achievements: AchievementProps[]
+  competitions: CompetitionProps[]
 }
 
 export type {

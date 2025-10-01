@@ -5,7 +5,7 @@ interface ProjectCardProps {
   name: string
   href: string
   imgUrl?: string
-  year: number
+  year: string
   desc: string
   stack: string[]
 }

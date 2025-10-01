@@ -2,12 +2,14 @@ import { ResumeProps } from '../types'
 
 export const resume: Readonly<ResumeProps> = {
   name: 'Elsam Rafi Saputra',
+  role: 'Remote Software Engineer',
   initials: 'E',
   url: 'https://elsamrafisptr-portfolio.vercel.app',
   location: 'Bandung, Indonesia',
   locationLink: 'https://',
-  description: '',
-  avatarUrl: '/me.webp',
+  description:
+    'Just a software engineer with a strong focus on design, full-stack, and marketing. Broader challenges transitioned me became passionate about entrepreneurship, software engineering, and artificial intelligence (AI).',
+  avatarUrl: '/profile.png',
 
   navbar: [],
   footer: [],
@@ -204,5 +206,6 @@ export const resume: Readonly<ResumeProps> = {
       year: '',
       credential: ''
     }
-  ]
+  ],
+  competitions: []
 } as const

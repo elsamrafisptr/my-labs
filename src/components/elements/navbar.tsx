@@ -1,14 +1,14 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { navItems } from '@/common/constants'
+import { navItems, resume } from '@/common/constants'
 import { cn } from '@/lib/client-utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { memo, useEffect, useMemo, useRef } from 'react'
 
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import ThemeToggle from './theme-toggle'
 
 const navList = Object.entries(navItems).map(([path, { name }]) => ({ path, name }))
@@ -40,13 +40,13 @@ const Navbar = () => {
     >
       <div className="flex items-center gap-4 tracking-tight md:gap-6">
         <Link href="/" className="relative flex items-center py-2">
-          <Image
-            src="/profile.png"
-            alt="logo"
-            width={32}
-            height={32}
-            className="aspect-square rounded-full border border-stone-700 shadow-md shadow-stone-700/20 dark:border-stone-200 dark:shadow-stone-200/20"
-          />
+          <Avatar>
+            <AvatarImage
+              src={resume.avatarUrl}
+              className="aspect-square rounded-full border border-stone-700 shadow-md shadow-stone-700/20 dark:border-stone-200 dark:shadow-stone-200/20"
+            />
+            <AvatarFallback>{resume.initials}</AvatarFallback>
+          </Avatar>
         </Link>
 
         <div className="flex gap-6">
