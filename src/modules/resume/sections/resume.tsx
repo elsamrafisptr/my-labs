@@ -118,7 +118,7 @@ const Resume = () => {
         <h3 className="text-md mb-4 font-semibold text-stone-700 dark:text-stone-50">
           Skills
         </h3>
-        <div className="flex flex-wrap items-center gap-2 md:gap-6">
+        <div className="flex flex-wrap items-center gap-2">
           {resume.skills.map(item => {
             return (
               <p
