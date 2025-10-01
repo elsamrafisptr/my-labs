@@ -22,7 +22,6 @@ export function BlogPosts() {
               href={post.slug}
               date={formatDate(post.metadata.publishedAt)}
               imgUrl={post.metadata.image}
-              views={199}
             />
           )
         })}

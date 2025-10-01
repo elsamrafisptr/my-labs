@@ -174,7 +174,7 @@ export const resume: Readonly<ResumeProps> = {
     {
       accelerator:
         'International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS 2025)',
-      name: 'Growth Momentum (E-Learning Platform)',
+      name: 'Growth Momentum',
       desc: '',
       imageUrl: '',
       href: '',
@@ -186,7 +186,7 @@ export const resume: Readonly<ResumeProps> = {
     },
     {
       accelerator: 'Bangkit Academy 2024 By Google, GoTo, Tokopedia, Traveloka',
-      name: 'StuntFree Stunting Prevention and Detection Apps',
+      name: 'StuntFree Apps',
       desc: '',
       imageUrl: '',
       href: '',

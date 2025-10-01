@@ -12,23 +12,14 @@ const AchievementCard = (props: AchievementProps) => {
       {props.imageUrl ? (
         <Image
           src={props.imageUrl}
-          alt={'Image of ' + props.name}
+          alt={'Image of ' + props.accelerator}
           width={600}
           height={600}
-          className="border-foreground/10 aspect-square h-full rounded-[4px] border object-cover object-top md:w-16"
+          className="border-foreground/10 aspect-[4/3] h-max w-full rounded-[4px] border object-cover object-top md:aspect-video"
         />
       ) : (
-        <article className="border-foreground/10 aspect-square h-full w-12 rounded-[4px] border bg-stone-300 object-cover object-top md:w-16" />
+        <article className="border-foreground/10 aspect-[4/3] h-max w-full rounded-[4px] border bg-stone-300 object-cover object-top md:aspect-video"></article>
       )}
-
-      <div className="flex w-full flex-col gap-1">
-        <div className="flex w-full flex-col items-start justify-between">
-          <span className="flex w-full items-center justify-between">
-            <h1 className="text-sm text-stone-200">{props.name}</h1>
-          </span>
-          <p className="text-sm font-semibold text-stone-50">{props.accelerator}</p>
-        </div>
-      </div>
     </Link>
   )
 }

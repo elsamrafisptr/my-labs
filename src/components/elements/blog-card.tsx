@@ -6,13 +6,13 @@ interface BlogCardProps {
   href: string
   imgUrl?: string
   date: string
-  views: number
+  views?: number
 }
 
 const BlogCard = ({ name, href, imgUrl, date, views }: BlogCardProps) => {
   return (
     <Link
-      href={href}
+      href={'/blog/'+href}
       className="hover:bg-foreground/5 hover:border-foreground/10 border-foreground/0 group relative -m-2 flex gap-6 rounded-md border p-2 transition-colors duration-100 md:flex-row"
     >
       {imgUrl ? (
@@ -33,7 +33,7 @@ const BlogCard = ({ name, href, imgUrl, date, views }: BlogCardProps) => {
           <p>{name}</p>
         </div>
         <span className="flex items-start gap-1 text-xs text-stone-400">
-          {views} Views
+          {views ? views : 'N/A'} Views
         </span>
       </div>
     </Link>

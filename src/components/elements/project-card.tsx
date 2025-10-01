@@ -1,24 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface ProjectCardProps {
-  name: string
-  href: string
-  imgUrl?: string
-  year: string
-  desc: string
-  stack: string[]
-}
+import { ProjectProps } from '@/common/types'
 
-const ProjectCard = ({ name, href, desc, imgUrl, year, stack }: ProjectCardProps) => {
+const ProjectCard = ({ name, href, desc, imageUrl, year, stacks }: ProjectProps) => {
   return (
     <Link
       href={href}
       className="hover:bg-foreground/5 hover:border-foreground/10 border-foreground/0 group relative -m-2 flex flex-col gap-6 rounded-md border p-2 transition-colors duration-100"
     >
-      {imgUrl ? (
+      {imageUrl ? (
         <Image
-          src={imgUrl}
+          src={imageUrl}
           alt={'Image of ' + name}
           width={600}
           height={600}
@@ -30,12 +23,12 @@ const ProjectCard = ({ name, href, desc, imgUrl, year, stack }: ProjectCardProps
 
       <div className="grow">
         <div className="flex w-full flex-row items-center justify-between">
-          <h1 className="font-medium">{name}</h1>
+          <h1 className="text-sm font-medium">{name}</h1>
           <p className="text-xs opacity-50">{year}</p>
         </div>
         <h2 className="text-sm opacity-70">{desc}</h2>
         <h3 className="mt-4 flex flex-row flex-wrap gap-1.5 text-xs opacity-70">
-          {stack.map(e => (
+          {stacks.map(e => (
             <span key={e} className="bg-foreground/5 text-foreground/60 px-1.5 py-0.5">
               {e}
             </span>
