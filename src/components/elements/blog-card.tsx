@@ -13,7 +13,7 @@ const BlogCard = ({ name, href, imgUrl, date, views }: BlogCardProps) => {
   return (
     <Link
       href={href}
-      className="hover:bg-foreground/5 hover:border-foreground/10 border-foreground/0 group relative -m-2 flex flex-col gap-6 rounded-md border p-2 transition-colors duration-100 md:flex-row"
+      className="hover:bg-foreground/5 hover:border-foreground/10 border-foreground/0 group relative -m-2 flex gap-6 rounded-md border p-2 transition-colors duration-100 md:flex-row"
     >
       {imgUrl ? (
         <Image
@@ -21,10 +21,10 @@ const BlogCard = ({ name, href, imgUrl, date, views }: BlogCardProps) => {
           alt={'Image of ' + name}
           width={600}
           height={600}
-          className="border-foreground/10 aspect-square h-full w-full rounded-[4px] border object-cover object-top md:w-16"
+          className="border-foreground/10 aspect-square h-full rounded-[4px] border object-cover object-top md:w-16"
         />
       ) : (
-        <article className="border-foreground/10 aspect-square h-full w-full rounded-[4px] border bg-stone-300 object-cover object-top md:w-16" />
+        <article className="border-foreground/10 aspect-square h-full rounded-[4px] border bg-stone-300 object-cover object-top md:w-16" />
       )}
 
       <div className="flex flex-col gap-1">

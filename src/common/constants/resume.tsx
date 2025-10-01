@@ -14,7 +14,26 @@ export const resume: Readonly<ResumeProps> = {
   navbar: [],
   footer: [],
 
-  skills: [],
+  skills: [
+    'Typescript',
+    'Python',
+    'Golang',
+    'PostgreSQL',
+    'MySQL',
+    'Firebase',
+    'MongoDB',
+    'React',
+    'Next JS',
+    'Express JS',
+    'gRPC',
+    'FastAPI',
+    'GCP',
+    'Azure',
+    'AWS',
+    'Docker',
+    'Github Actions',
+    'Wordpress'
+  ],
   works: [
     {
       title: 'Software Engineer',
@@ -26,7 +45,7 @@ export const resume: Readonly<ResumeProps> = {
       status: 'Full Time',
       type: 'Remote',
       website: 'https://schnap.com.au/',
-      start: 'March 2025',
+      start: 'Mar 2025',
       end: 'Now',
       content: ''
     },
@@ -40,8 +59,8 @@ export const resume: Readonly<ResumeProps> = {
       status: 'Full Time',
       type: 'Remote',
       website: 'https://kaptnn.com/',
-      start: 'September 2024',
-      end: 'August 2025',
+      start: 'Sep 2024',
+      end: 'Aug 2025',
       content: ''
     },
     {
@@ -54,8 +73,8 @@ export const resume: Readonly<ResumeProps> = {
       status: 'Full Time',
       type: 'Remote',
       website: 'https://schooltechindonesia.com/',
-      start: 'August 2024',
-      end: 'December 2024',
+      start: 'Aug 2024',
+      end: 'Dec 2024',
       content: ''
     },
     {
@@ -68,8 +87,8 @@ export const resume: Readonly<ResumeProps> = {
       status: 'Part Time',
       type: 'Remote',
       website: 'https://betrbeta.com/en-SG',
-      start: 'Juny 2024',
-      end: 'August 2024',
+      start: 'Jun 2024',
+      end: 'Aug 2024',
       content: ''
     }
   ],
@@ -82,20 +101,20 @@ export const resume: Readonly<ResumeProps> = {
       imageUrl: '',
       href: '',
       website: 'https://telkomuniversity.ac.id/',
-      start: 'Septmber 2021',
-      end: 'January 2025',
+      start: 'Sep 2021',
+      end: 'Jan 2025',
       content: ''
     },
     {
       title: 'Cloud Computing Cohort',
-      name: 'Bangkit Academy 2024 By Google, GoTo, Tokopedia, Traveloka',
+      name: 'Bangkit Academy 2024',
       score: '(A, 87/100)',
       location: 'Jakarta, Indonesia',
       imageUrl: '',
       href: '',
       website: 'https://grow.google/intl/id_id/bangkit/',
-      start: 'September 2024',
-      end: 'January 2025',
+      start: 'Sep 2024',
+      end: 'Jan 2025',
       content: ''
     },
     {
@@ -106,23 +125,23 @@ export const resume: Readonly<ResumeProps> = {
       imageUrl: '',
       href: '',
       website: 'https://aws.dicoding.com/',
-      start: 'March 2024',
-      end: 'September 2024',
+      start: 'Mar 2024',
+      end: 'Sep 2024',
       content: ''
     }
   ],
   organizations: [
     {
       title: 'Design and Publication Team',
-      name: 'Telkom University Education Movement',
+      name: 'TelU Edu Movement',
       desc: 'Social & Education',
       location: 'Bandung, Indonesia',
       imageUrl: '',
       href: '',
       type: 'On-Site',
       website: '',
-      start: 'October 2021',
-      end: 'August 2022',
+      start: 'Oct 2021',
+      end: 'Aug 2022',
       content: ''
     },
     {
@@ -134,8 +153,8 @@ export const resume: Readonly<ResumeProps> = {
       href: '',
       type: 'Remote',
       website: 'https://www.instagram.com/telu_edumovement/',
-      start: 'November 2021',
-      end: 'March 2022',
+      start: 'Nov 2021',
+      end: 'Mar 2022',
       content: ''
     }
   ],
