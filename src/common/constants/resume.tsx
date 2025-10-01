@@ -199,8 +199,8 @@ export const resume: Readonly<ResumeProps> = {
   ],
   achievements: [
     {
-      accelerator: '',
-      name: '',
+      accelerator: 'elevAIte by Microsoft Azure',
+      name: 'Certificate elevAIte by Microsoft Azure',
       desc: '',
       imageUrl: '',
       href: '',
@@ -208,8 +208,44 @@ export const resume: Readonly<ResumeProps> = {
       credential: ''
     },
     {
-      accelerator: '',
-      name: '',
+      accelerator: 'ICADEIS 2025',
+      name: 'Certificate as Paper Presenter',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      year: '',
+      credential: ''
+    },
+    {
+      accelerator: 'Telkom University',
+      name: 'Telkom University Endowment Fund Scholarship 2024',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      year: '',
+      credential: ''
+    },
+    {
+      accelerator: 'Bangkit Academy 2024',
+      name: 'Bangkit Academy Certificate',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      year: '',
+      credential: ''
+    },
+    {
+      accelerator: 'AWS Backend Academy',
+      name: 'Certificate of AWS Backend Academy',
+      desc: '',
+      imageUrl: '',
+      href: '',
+      year: '',
+      credential: ''
+    },
+    {
+      accelerator: 'Tanamduit',
+      name: 'Tanamduit Campus Ambassador 2022',
       desc: '',
       imageUrl: '',
       href: '',
