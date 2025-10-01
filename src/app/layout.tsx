@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { resume } from '@/common/constants'
 import { cn } from '@/lib/client-utils'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
@@ -12,15 +13,15 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter'
+    default: `${resume.name} | ${resume.role}`,
+    template: `%s | ${resume.name}`
   },
-  description: 'This is my portfolio.',
+  description: resume.description,
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: `${resume.name} | ${resume.role}`,
+    description: resume.description,
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: `${resume.name} | ${resume.role}`,
     locale: 'en_US',
     type: 'website'
   },

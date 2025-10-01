@@ -9,7 +9,7 @@ export const resume: Readonly<ResumeProps> = {
   locationLink: 'https://',
   description:
     'Just a software engineer with a strong focus on design, full-stack, and marketing. Broader challenges transitioned me became passionate about entrepreneurship, software engineering, and artificial intelligence (AI).',
-  avatarUrl: '/profile.png',
+  avatarUrl: '/profile.webp',
 
   navbar: [],
   footer: [],
