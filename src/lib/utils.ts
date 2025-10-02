@@ -53,6 +53,22 @@ export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), 'posts'))
 }
 
+export function getEducationPosts() {
+  return getMDXData(path.join(process.cwd(), 'posts', 'educations'))
+}
+
+export function getWorkPosts() {
+  return getMDXData(path.join(process.cwd(), 'posts', 'works'))
+}
+
+export function getOrganizationPosts() {
+  return getMDXData(path.join(process.cwd(), 'posts', 'organizations'))
+}
+
+export function getProjectPosts() {
+  return getMDXData(path.join(process.cwd(), 'posts', 'projects'))
+}
+
 export function formatDate(date: string, includeRelative = false) {
   const currentDate = new Date()
   if (!date.includes('T')) {
