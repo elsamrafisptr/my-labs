@@ -16,25 +16,25 @@ const Home = () => {
   const links = useMemo(() => footList, [])
 
   return (
-    <main className="flex flex-col gap-6">
+    <main className="flex w-full flex-col gap-6">
       <section>
-        <h1 className="text-lg font-semibold md:text-xl dark:text-stone-50">
+        <h1 className="text-lg font-semibold text-stone-800 md:text-xl dark:text-stone-100">
           {resume.name}
         </h1>
-        <h2 className="mb-4 text-sm font-medium text-stone-700 md:text-base dark:text-stone-300">
+        <h2 className="mb-4 text-sm font-medium text-stone-600 md:text-base dark:text-stone-300">
           {resume.role}
         </h2>
-        <p className="mb-4 text-justify text-sm text-stone-700 md:text-base dark:text-stone-300">
+        <p className="mb-6 text-justify text-sm text-stone-600 md:text-base dark:text-stone-300">
           {resume.description}
           <br />
           <br />I also enjoy Leetcode, competitions, and hackathons, because I find them
           very enjoyable while challenging myself and building something.
         </p>
         <div className="flex items-center justify-between">
-          <ul className="font-sm flex w-fit space-y-2 space-x-6 text-neutral-600 md:space-y-0 md:space-x-4 dark:text-neutral-300">
+          <ul className="font-sm flex w-fit space-x-6 text-stone-600 md:space-y-0 md:space-x-4 dark:text-stone-300">
             <li>
               <Link
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
                 rel="noopener noreferrer"
                 target="_blank"
                 href={links[1]!.path}
@@ -45,7 +45,7 @@ const Home = () => {
             </li>
             <li>
               <Link
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
                 rel="noopener noreferrer"
                 target="_blank"
                 href={links[2]!.path}
@@ -56,7 +56,7 @@ const Home = () => {
             </li>
             <li>
               <Link
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
                 rel="noopener noreferrer"
                 target="_blank"
                 href={links[3]!.path}
@@ -66,13 +66,13 @@ const Home = () => {
               </Link>
             </li>
           </ul>
-          <button className="flex cursor-pointer items-center gap-2 text-sm hover:text-stone-50">
+          <button className="flex cursor-pointer items-center gap-2 text-sm text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-stone-100">
             <DownloadIcon size={16} /> Download CV
           </button>
         </div>
       </section>
       <section>
-        <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
+        <h3 className="text-md mb-6 font-semibold text-stone-600 dark:text-stone-50">
           Experiences
         </h3>
         <div className="grid grid-cols-1 gap-6">
@@ -125,7 +125,7 @@ const Home = () => {
             return (
               <p
                 key={item.toLocaleLowerCase().replace(' ', '-')}
-                className="rounded bg-stone-600 px-1.5 py-1 text-xs"
+                className="rounded bg-stone-300 px-1.5 py-1 text-xs text-stone-800 dark:bg-stone-600 dark:text-stone-100"
               >
                 {item}
               </p>

@@ -3,7 +3,7 @@ import ProjectCard from '@/components/elements/project-card'
 
 const Labs = () => {
   return (
-    <main className="flex flex-col gap-6">
+    <main className="flex w-full flex-col gap-6">
       <section>
         <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
           Coming Soon
