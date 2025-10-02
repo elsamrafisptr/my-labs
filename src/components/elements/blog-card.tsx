@@ -21,10 +21,10 @@ const BlogCard = ({ name, href, imgUrl, date, views }: BlogCardProps) => {
           alt={'Image of ' + name}
           width={600}
           height={600}
-          className="border-foreground/10 aspect-square h-full rounded-[4px] border object-cover object-top md:w-16"
+          className="border-foreground/10 aspect-square h-16 w-16 rounded-[4px] border object-cover object-center"
         />
       ) : (
-        <article className="border-foreground/10 aspect-square h-full rounded-[4px] border bg-stone-300 object-cover object-top md:w-16" />
+        <article className="border-foreground/10 aspect-square h-16 w-16 rounded-[4px] border bg-stone-300 object-cover object-center" />
       )}
 
       <div className="flex flex-col gap-1">

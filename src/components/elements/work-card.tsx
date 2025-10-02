@@ -15,10 +15,10 @@ const WorkCard = (props: WorkProps) => {
           alt={'Image of ' + props.name}
           width={600}
           height={600}
-          className="border-foreground/10 aspect-square h-full rounded-[4px] border object-cover object-top md:w-16"
+          className="border-foreground/10 aspect-square h-12 w-12 rounded-[4px] border object-cover object-center"
         />
       ) : (
-        <article className="border-foreground/10 aspect-square h-full w-12 rounded-[4px] border bg-stone-300 object-cover object-top md:w-16" />
+        <article className="border-foreground/10 aspect-square h-12 w-12 rounded-[4px] border bg-stone-300 object-cover object-center" />
       )}
 
       <div className="flex w-full flex-col gap-1">
