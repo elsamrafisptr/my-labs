@@ -32,7 +32,7 @@ const Home = () => {
       const slug = `works/${slugify(base)}`
       return { ...item, slug }
     })
-  }, [resume?.works])
+  }, [])
 
   const organizations = useMemo(() => {
     return (resume?.organizations || []).map(item => {
@@ -40,7 +40,7 @@ const Home = () => {
       const slug = `organizations/${slugify(base)}`
       return { ...item, slug }
     })
-  }, [resume?.organizations])
+  }, [])
 
   const educations = useMemo(() => {
     return (resume?.educations || []).map(item => {
@@ -48,7 +48,7 @@ const Home = () => {
       const slug = `educations/${slugify(base)}`
       return { ...item, slug }
     })
-  }, [resume?.educations])
+  }, [])
 
   const skills = useMemo(() => resume?.skills, [])
 
