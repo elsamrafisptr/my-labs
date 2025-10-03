@@ -53,6 +53,7 @@ export function generateMetadata({ params }: { params: any }) {
 
 export default function Organization({ params }: { params: any }) {
   const post = getOrganizationPosts().find(post => post.slug === params.slug)
+  console.log(post?.slug)
 
   if (!post) {
     notFound()

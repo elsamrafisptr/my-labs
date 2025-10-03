@@ -15,10 +15,10 @@ const ProjectCard = ({ name, href, desc, imageUrl, year, stacks }: ProjectProps)
           alt={'Image of ' + name}
           width={600}
           height={600}
-          className="border-foreground/10 aspect-[4/3] h-max w-full rounded-[4px] border object-cover object-top md:aspect-video"
+          className="border-foreground/10 aspect-video h-max w-full rounded-[4px] border object-cover object-center"
         />
       ) : (
-        <article className="border-foreground/10 aspect-[4/3] h-max w-full rounded-[4px] border bg-stone-300 object-cover object-top md:aspect-video"></article>
+        <article className="border-foreground/10 aspect-video h-max w-full rounded-[4px] border bg-stone-300 object-cover object-center"></article>
       )}
 
       <div className="grow">

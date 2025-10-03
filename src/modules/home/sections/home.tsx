@@ -12,8 +12,47 @@ import { useMemo } from 'react'
 
 const footList = Object.entries(footerItems).map(([path, { name }]) => ({ path, name }))
 
+function slugify(input = '') {
+  return input
+    .normalize?.('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+}
+
 const Home = () => {
   const links = useMemo(() => footList, [])
+
+  const works = useMemo(() => {
+    return (resume?.works || []).map(item => {
+      const base = `${item.title ?? ''} ${item.name ?? ''}`
+      const slug = `works/${slugify(base)}`
+      return { ...item, slug }
+    })
+  }, [resume?.works])
+
+  const organizations = useMemo(() => {
+    return (resume?.organizations || []).map(item => {
+      const base = `${item.title ?? ''} ${item.name ?? ''}`
+      const slug = `organizations/${slugify(base)}`
+      return { ...item, slug }
+    })
+  }, [resume?.organizations])
+
+  const educations = useMemo(() => {
+    return (resume?.educations || []).map(item => {
+      const base = `${item.title ?? ''} ${item.name ?? ''}`
+      const slug = `educations/${slugify(base)}`
+      return { ...item, slug }
+    })
+  }, [resume?.educations])
+
+  const skills = useMemo(() => resume?.skills, [])
+
+  const achievements = useMemo(() => resume?.achievements, [])
 
   return (
     <main className="flex w-full flex-col gap-6">
@@ -76,11 +115,12 @@ const Home = () => {
           Experiences
         </h3>
         <div className="grid grid-cols-1 gap-6">
-          {resume.works.map(item => {
+          {works.map(item => {
             return (
               <WorkCard
                 key={item.name.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
+                href={item.slug}
               />
             )
           })}
@@ -91,11 +131,12 @@ const Home = () => {
           Organizations
         </h3>
         <div className="grid grid-cols-1 gap-6">
-          {resume.organizations.map(item => {
+          {organizations.map(item => {
             return (
               <OrganizationCard
                 key={item.title.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
+                href={item.slug}
               />
             )
           })}
@@ -106,11 +147,12 @@ const Home = () => {
           Educations
         </h3>
         <div className="grid grid-cols-1 gap-6">
-          {resume.educations.map(item => {
+          {educations.map(item => {
             return (
               <EducationCard
                 key={item.name.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
+                href={item.slug}
               />
             )
           })}
@@ -121,7 +163,7 @@ const Home = () => {
           Skills
         </h3>
         <div className="flex flex-wrap items-center gap-2">
-          {resume.skills.map(item => {
+          {skills.map(item => {
             return (
               <p
                 key={item.toLocaleLowerCase().replace(' ', '-')}
@@ -138,7 +180,7 @@ const Home = () => {
           Achievements
         </h3>
         <div className="mt-4 grid grid-cols-3 gap-6">
-          {resume.achievements.map(item => (
+          {achievements.map(item => (
             <AchievementCard
               key={item.accelerator.toLocaleLowerCase().replace(' ', '-')}
               {...item}

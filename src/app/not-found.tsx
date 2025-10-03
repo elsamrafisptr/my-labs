@@ -1,6 +1,6 @@
 export default function NotFound() {
   return (
-    <section>
+    <section className="flex w-full flex-col items-start justify-start">
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         404 - Page Not Found
       </h1>
