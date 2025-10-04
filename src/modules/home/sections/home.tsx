@@ -1,16 +1,14 @@
-'use client'
-
 import Link from 'next/link'
 
 import { footerItems, resume } from '@/common/constants'
 import AchievementCard from '@/components/elements/achievement-card'
+import DownloadButton from '@/components/elements/download-button'
 import EducationCard from '@/components/elements/edu-card'
 import OrganizationCard from '@/components/elements/org-card'
 import WorkCard from '@/components/elements/work-card'
-import { DownloadIcon, GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
-import { useMemo } from 'react'
+import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 
-const footList = Object.entries(footerItems).map(([path, { name }]) => ({ path, name }))
+export const dynamic = 'force-static'
 
 function slugify(input = '') {
   return input
@@ -24,35 +22,31 @@ function slugify(input = '') {
 }
 
 const Home = () => {
-  const links = useMemo(() => footList, [])
+  const links = Object.entries(footerItems).map(([path, { name }]) => ({
+    path,
+    name
+  }))
 
-  const works = useMemo(() => {
-    return (resume?.works || []).map(item => {
-      const base = `${item.title ?? ''} ${item.name ?? ''}`
-      const slug = `works/${slugify(base)}`
-      return { ...item, slug }
-    })
-  }, [])
+  const works = (resume?.works || []).map(item => {
+    const base = `${item.title ?? ''} ${item.name ?? ''}`
+    const slug = `works/${slugify(base)}`
+    return { ...item, slug }
+  })
 
-  const organizations = useMemo(() => {
-    return (resume?.organizations || []).map(item => {
-      const base = `${item.title ?? ''} ${item.name ?? ''}`
-      const slug = `organizations/${slugify(base)}`
-      return { ...item, slug }
-    })
-  }, [])
+  const organizations = (resume?.organizations || []).map(item => {
+    const base = `${item.title ?? ''} ${item.name ?? ''}`
+    const slug = `organizations/${slugify(base)}`
+    return { ...item, slug }
+  })
 
-  const educations = useMemo(() => {
-    return (resume?.educations || []).map(item => {
-      const base = `${item.title ?? ''} ${item.name ?? ''}`
-      const slug = `educations/${slugify(base)}`
-      return { ...item, slug }
-    })
-  }, [])
+  const educations = (resume?.educations || []).map(item => {
+    const base = `${item.title ?? ''} ${item.name ?? ''}`
+    const slug = `educations/${slugify(base)}`
+    return { ...item, slug }
+  })
 
-  const skills = useMemo(() => resume?.skills, [])
-
-  const achievements = useMemo(() => resume?.achievements, [])
+  const skills = resume?.skills || []
+  const achievements = resume?.achievements || []
 
   return (
     <main className="flex w-full flex-col gap-6">
@@ -98,16 +92,17 @@ const Home = () => {
                 className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
                 rel="noopener noreferrer"
                 target="_blank"
-                href={links[3]!.path}
+                href={`mailto:${links[3]!.path}`}
               >
                 <MailIcon size={16} />
                 <p className="ml-2 text-sm capitalize">{links[3]!.name}</p>
               </Link>
             </li>
           </ul>
-          <button className="flex cursor-pointer items-center gap-2 text-sm text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-stone-100">
-            <DownloadIcon size={16} /> Download CV
-          </button>
+          <DownloadButton
+            fileUrl="/resume.pdf"
+            fileName={`${resume.name} - ${resume.role} Resume`}
+          />
         </div>
       </section>
       <section>
@@ -179,7 +174,7 @@ const Home = () => {
         <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
           Achievements
         </h3>
-        <div className="mt-4 grid grid-cols-3 gap-6">
+        <div className="mt-4 grid grid-cols-3 gap-4 md:gap-6">
           {achievements.map(item => (
             <AchievementCard
               key={item.accelerator.toLocaleLowerCase().replace(' ', '-')}
