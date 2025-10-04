@@ -1,4 +1,3 @@
-/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { notFound } from 'next/navigation'
 
 import { baseUrl } from '@/app/sitemap'
@@ -6,15 +5,23 @@ import { CustomMDX } from '@/components/elements/custom-mdx'
 import { formatDate, getProjectPosts } from '@/lib/utils'
 
 export async function generateStaticParams() {
-  const posts = getProjectPosts()
+  const posts = await getProjectPosts()
 
   return posts.map(post => ({
     slug: post.slug
   }))
 }
 
-export function generateMetadata({ params }: { params: any }) {
-  const post = getProjectPosts().find(post => post.slug === params.slug)
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+
+  const posts = await getProjectPosts()
+  const post = posts.find(post => post.slug === slug)
+
   if (!post) {
     return
   }
@@ -25,6 +32,7 @@ export function generateMetadata({ params }: { params: any }) {
     summary: description,
     image
   } = post.metadata
+
   const ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
   return {
@@ -35,7 +43,7 @@ export function generateMetadata({ params }: { params: any }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${baseUrl}/projects/${post.slug}`,
       images: [
         {
           url: ogImage
@@ -51,12 +59,23 @@ export function generateMetadata({ params }: { params: any }) {
   }
 }
 
-export default function Projects({ params }: { params: any }) {
-  const post = getProjectPosts().find(post => post.slug === params.slug)
+export default async function Project({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+
+  const posts = await getProjectPosts()
+  const post = posts.find(post => post.slug === slug)
 
   if (!post) {
     notFound()
   }
+
+  const imageUrl = post.metadata.image
+    ? `${baseUrl}${post.metadata.image}`
+    : `/og?title=${encodeURIComponent(post.metadata.title)}`
 
   return (
     <section>
@@ -71,10 +90,8 @@ export default function Projects({ params }: { params: any }) {
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            image: imageUrl,
+            url: `${baseUrl}/projects/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio'

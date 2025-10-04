@@ -1,7 +1,5 @@
 import { BlogPosts } from '@/components/elements/posts'
 
-export const dynamic = 'force-static'
-
 const Blog = () => {
   return (
     <main className="flex w-full flex-col gap-6">

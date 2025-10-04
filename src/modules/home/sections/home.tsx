@@ -8,8 +8,6 @@ import OrganizationCard from '@/components/elements/org-card'
 import WorkCard from '@/components/elements/work-card'
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 
-export const dynamic = 'force-static'
-
 function slugify(input = '') {
   return input
     .normalize?.('NFKD')

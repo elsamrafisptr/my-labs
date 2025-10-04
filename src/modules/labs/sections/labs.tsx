@@ -1,8 +1,6 @@
 import { resume } from '@/common/constants'
 import ProjectCard from '@/components/elements/project-card'
 
-export const dynamic = 'force-static'
-
 const Labs = () => {
   return (
     <main className="flex w-full flex-col gap-6">
