@@ -1,0 +1,21 @@
+name: check-code-style
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-code-style:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js and dependencies
+        uses: ./.github/workflows/setup-node
+
+      - name: Run Prettier format check
+        run: pnpm run format:check
+
+      - name: Run TypeScript check
+        run: pnpm run types:check

@@ -1,4 +1,4 @@
-import { baseUrl } from './sitemap'
+import { baseUrl } from '@/common/constants'
 
 export default function robots() {
   return {

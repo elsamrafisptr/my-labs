@@ -1,0 +1,21 @@
+name: setup-node-pnpm
+description: 'Reusable setup action for Node + pnpm (install + cache)'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10.16.1
+        run_install: false
+
+    - name: Use node.js with pnpm cache
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+      shell: bash

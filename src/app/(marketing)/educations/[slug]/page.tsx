@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 
-import { baseUrl } from '@/app/sitemap'
+import { baseUrl } from '@/common/constants'
 import { CustomMDX } from '@/components/elements/custom-mdx'
 import { formatDate, getEducationPosts } from '@/lib/utils'
 

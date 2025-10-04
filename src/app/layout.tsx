@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { resume } from '@/common/constants'
+import { baseUrl, resume } from '@/common/constants'
 import { cn } from '@/lib/client-utils'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
@@ -8,7 +8,6 @@ import { GeistSans } from 'geist/font/sans'
 import { Provider } from '@/components/layouts/provider'
 
 import './globals.css'
-import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

@@ -1,5 +1,7 @@
-import { baseUrl } from '@/app/sitemap'
+import { baseUrl } from '@/common/constants'
 import { getBlogPosts } from '@/lib/utils'
+
+export const dynamic = 'force-static'
 
 export async function GET() {
   const allBlogs = await getBlogPosts()
