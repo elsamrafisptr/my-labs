@@ -11,12 +11,12 @@ import { memo, useEffect, useMemo, useRef } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import ThemeToggle from './theme-toggle'
 
-const navList = Object.entries(navItems).map(([path, { name }]) => ({ path, name }))
-
 const Navbar = () => {
   const pathname = usePathname()
 
-  const links = useMemo(() => navList, [])
+  const navList = Object.entries(navItems).map(([path, { name }]) => ({ path, name }))
+
+  const links = useMemo(() => navList, [navList])
 
   const shouldReduceMotion = useReducedMotion()
   const isFirstMountRef = useRef(true)
@@ -36,7 +36,7 @@ const Navbar = () => {
       initial={initialProp}
       animate={initialProp === false ? undefined : { opacity: 1, y: 0 }}
       transition={{ duration: 0.2, ease: 'easeInOut' }}
-      className="sticky top-0 z-[99999] container my-8 flex max-w-[680px] items-center justify-between gap-4 bg-stone-200 py-4 lg:my-10 dark:bg-stone-800"
+      className="sticky top-0 z-[99999] container flex max-w-[680px] items-center justify-between gap-4 bg-stone-200 py-8 dark:bg-stone-800"
     >
       <div className="flex items-center gap-4 tracking-tight md:gap-6">
         <Link href="/" className="relative flex items-center py-2">
