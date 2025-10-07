@@ -1,7 +1,4 @@
 const footerItems = {
-  '/rss': {
-    name: 'rss'
-  },
   'https://github.com/elsamrafisptr': {
     name: 'github'
   },

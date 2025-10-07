@@ -64,37 +64,43 @@ const Home = () => {
         <div className="flex items-center justify-between">
           <ul className="font-sm flex w-fit space-x-6 text-stone-600 md:space-y-0 md:space-x-4 dark:text-stone-300">
             <li>
-              <Link
-                className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href={links[1]!.path}
-              >
-                <GithubIcon size={16} />
-                <p className="ml-2 text-sm capitalize">{links[1]!.name}</p>
-              </Link>
+              {links[0]?.path && (
+                <Link
+                  className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={links[0].path}
+                >
+                  <GithubIcon size={16} />
+                  <p className="ml-2 text-sm capitalize">{links[0].name}</p>
+                </Link>
+              )}
             </li>
             <li>
-              <Link
-                className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href={links[2]!.path}
-              >
-                <LinkedinIcon size={16} />
-                <p className="ml-2 text-sm capitalize">{links[2]!.name}</p>
-              </Link>
+              {links[1]?.path && (
+                <Link
+                  className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={links[1].path}
+                >
+                  <LinkedinIcon size={16} />
+                  <p className="ml-2 text-sm capitalize">{links[1].name}</p>
+                </Link>
+              )}
             </li>
             <li>
-              <Link
-                className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href={`mailto:${links[3]!.path}`}
-              >
-                <MailIcon size={16} />
-                <p className="ml-2 text-sm capitalize">{links[3]!.name}</p>
-              </Link>
+              {links[2]?.path && (
+                <Link
+                  className="flex items-center transition-all hover:text-stone-800 dark:hover:text-stone-100"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={`mailto:${links[2].path}`}
+                >
+                  <MailIcon size={16} />
+                  <p className="ml-2 text-sm capitalize">{links[2].name}</p>
+                </Link>
+              )}
             </li>
           </ul>
           <DownloadButton
