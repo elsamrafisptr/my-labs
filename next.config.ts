@@ -10,6 +10,9 @@ const baseConfig: NextConfig = {
   poweredByHeader: false,
   transpilePackages: ['next-mdx-remote'],
   serverExternalPackages: [],
+  images: {
+    unoptimized: true
+  },
   turbopack: {
     resolveAlias: {
       underscore: 'lodash'
