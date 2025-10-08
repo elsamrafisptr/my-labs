@@ -1,6 +1,7 @@
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
-import { baseUrl } from '@/common/constants'
+import { basePath, baseUrl } from '@/common/constants'
 import { CustomMDX } from '@/components/elements/custom-mdx'
 import { formatDate, getBlogPosts } from '@/lib/utils'
 
@@ -103,7 +104,16 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose">
+      {post.metadata.image && (
+        <Image
+          src={basePath + post.metadata.image}
+          alt={post.metadata.title}
+          width={1024}
+          height={1024}
+          className="mt-4 aspect-video w-full object-cover"
+        />
+      )}
+      <article className="prose dark:prose-invert prose-stone mt-8">
         <CustomMDX source={post.content} />
       </article>
     </section>
