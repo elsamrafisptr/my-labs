@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { navItems, resume } from '@/common/constants'
+import { basePath, navItems, resume } from '@/common/constants'
 import { cn } from '@/lib/client-utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { memo, useEffect, useMemo, useRef } from 'react'
@@ -42,7 +42,7 @@ const Navbar = () => {
         <Link href="/" className="relative flex items-center py-2">
           <Avatar>
             <AvatarImage
-              src={resume.avatarUrl}
+              src={basePath + resume.avatarUrl}
               className="aspect-square rounded-full border border-stone-700 shadow-md shadow-stone-700/20 dark:border-stone-200 dark:shadow-stone-200/20"
             />
             <AvatarFallback>{resume.initials}</AvatarFallback>

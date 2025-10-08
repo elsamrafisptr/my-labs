@@ -1,3 +1,4 @@
+import { basePath } from '@/common/constants'
 import { formatDate, getBlogPosts } from '@/lib/utils'
 
 import BlogCard from './blog-card'
@@ -21,7 +22,7 @@ export function BlogPosts() {
               name={post.metadata.title}
               href={post.slug}
               date={formatDate(post.metadata.publishedAt)}
-              imgUrl={post.metadata.image}
+              imgUrl={basePath + post.metadata.image}
             />
           )
         })}

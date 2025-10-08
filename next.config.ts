@@ -4,7 +4,6 @@ import withBundleAnalyzer from '@next/bundle-analyzer'
 
 const baseConfig: NextConfig = {
   output: 'export',
-  assetPrefix: '/my-labs',
   reactStrictMode: true,
   poweredByHeader: false,
   transpilePackages: ['next-mdx-remote'],

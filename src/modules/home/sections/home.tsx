@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { footerItems, resume } from '@/common/constants'
+import { basePath, footerItems, resume } from '@/common/constants'
 import AchievementCard from '@/components/elements/achievement-card'
 import DownloadButton from '@/components/elements/download-button'
 import EducationCard from '@/components/elements/edu-card'
@@ -119,6 +119,7 @@ const Home = () => {
               <WorkCard
                 key={item.name.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
+                imageUrl={basePath + item.imageUrl}
                 href={item.slug}
               />
             )
@@ -135,6 +136,7 @@ const Home = () => {
               <OrganizationCard
                 key={item.title.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
+                imageUrl={basePath + item.imageUrl}
                 href={item.slug}
               />
             )
@@ -151,6 +153,7 @@ const Home = () => {
               <EducationCard
                 key={item.name.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
+                imageUrl={basePath + item.imageUrl}
                 href={item.slug}
               />
             )
