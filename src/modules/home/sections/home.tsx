@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 import { basePath, footerItems, resume } from '@/common/constants'
@@ -7,6 +9,7 @@ import EducationCard from '@/components/elements/edu-card'
 import OrganizationCard from '@/components/elements/org-card'
 import WorkCard from '@/components/elements/work-card'
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
+import { useState } from 'react'
 
 function slugify(input = '') {
   return input
@@ -20,6 +23,18 @@ function slugify(input = '') {
 }
 
 const Home = () => {
+  const [showAll, setShowAll] = useState<Record<string, boolean>>({
+    works: false,
+    organizations: false,
+    educations: false
+  })
+
+  const SHOW_LIMIT = 3
+
+  const toggleShow = (section: string) => {
+    setShowAll(prev => ({ ...prev, [section]: !prev[section] }))
+  }
+
   const links = Object.entries(footerItems).map(([path, { name }]) => ({
     path,
     name
@@ -43,11 +58,17 @@ const Home = () => {
     return { ...item, slug }
   })
 
+  const visibleWorks = showAll.works ? works : works.slice(0, SHOW_LIMIT)
+  const visibleOrgs = showAll.organizations
+    ? organizations
+    : organizations.slice(0, SHOW_LIMIT)
+  const visibleEdu = showAll.educations ? educations : educations.slice(0, SHOW_LIMIT)
+
   const skills = resume?.skills || []
   const achievements = resume?.achievements || []
 
   return (
-    <main className="flex w-full flex-col gap-6">
+    <main className="flex w-full flex-col gap-12">
       <section>
         <h1 className="text-lg font-semibold text-stone-800 md:text-xl dark:text-stone-100">
           {resume.name}
@@ -104,7 +125,7 @@ const Home = () => {
             </li>
           </ul>
           <DownloadButton
-            fileUrl="/resume.pdf"
+            fileUrl={basePath + '/resume.pdf'}
             fileName={`${resume.name} - ${resume.role} Resume`}
           />
         </div>
@@ -114,7 +135,7 @@ const Home = () => {
           Experiences
         </h3>
         <div className="grid grid-cols-1 gap-6">
-          {works.map(item => {
+          {visibleWorks.map(item => {
             return (
               <WorkCard
                 key={item.name.toLocaleLowerCase().replace(' ', '-')}
@@ -124,6 +145,18 @@ const Home = () => {
               />
             )
           })}
+          {works.length > SHOW_LIMIT && (
+            <div className="flex justify-center">
+              <button
+                onClick={() => toggleShow('works')}
+                className="cursor-pointer text-xs text-stone-500 underline-offset-4 hover:underline dark:text-stone-400"
+              >
+                {showAll.works
+                  ? 'Show less'
+                  : `Show more (${works.length - SHOW_LIMIT})`}
+              </button>
+            </div>
+          )}
         </div>
       </section>
       <section>
@@ -131,7 +164,7 @@ const Home = () => {
           Organizations
         </h3>
         <div className="grid grid-cols-1 gap-6">
-          {organizations.map(item => {
+          {visibleOrgs.map(item => {
             return (
               <OrganizationCard
                 key={item.title.toLocaleLowerCase().replace(' ', '-')}
@@ -141,6 +174,18 @@ const Home = () => {
               />
             )
           })}
+          {organizations.length > SHOW_LIMIT && (
+            <div className="flex justify-center">
+              <button
+                onClick={() => toggleShow('organizations')}
+                className="cursor-pointer text-xs text-stone-500 underline-offset-4 hover:underline dark:text-stone-400"
+              >
+                {showAll.organizations
+                  ? 'Show less'
+                  : `Show more (${works.length - SHOW_LIMIT})`}
+              </button>
+            </div>
+          )}
         </div>
       </section>
       <section>
@@ -148,7 +193,7 @@ const Home = () => {
           Educations
         </h3>
         <div className="grid grid-cols-1 gap-6">
-          {educations.map(item => {
+          {visibleEdu.map(item => {
             return (
               <EducationCard
                 key={item.name.toLocaleLowerCase().replace(' ', '-')}
@@ -158,6 +203,18 @@ const Home = () => {
               />
             )
           })}
+          {educations.length > SHOW_LIMIT && (
+            <div className="flex justify-center">
+              <button
+                onClick={() => toggleShow('educations')}
+                className="cursor-pointer text-xs text-stone-500 underline-offset-4 hover:underline dark:text-stone-400"
+              >
+                {showAll.educations
+                  ? 'Show less'
+                  : `Show more (${works.length - SHOW_LIMIT})`}
+              </button>
+            </div>
+          )}
         </div>
       </section>
       <section>
