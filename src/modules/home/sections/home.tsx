@@ -3,7 +3,6 @@
 import Link from 'next/link'
 
 import { basePath, footerItems, resume } from '@/common/constants'
-import AchievementCard from '@/components/elements/achievement-card'
 import DownloadButton from '@/components/elements/download-button'
 import EducationCard from '@/components/elements/edu-card'
 import OrganizationCard from '@/components/elements/org-card'
@@ -65,7 +64,6 @@ const Home = () => {
   const visibleEdu = showAll.educations ? educations : educations.slice(0, SHOW_LIMIT)
 
   const skills = resume?.skills || []
-  const achievements = resume?.achievements || []
 
   return (
     <main className="flex w-full flex-col gap-12">
@@ -234,7 +232,7 @@ const Home = () => {
           })}
         </div>
       </section>
-      <section>
+      {/* <section>
         <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
           Achievements
         </h3>
@@ -246,7 +244,7 @@ const Home = () => {
             />
           ))}
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }
