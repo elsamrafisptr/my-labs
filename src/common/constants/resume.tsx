@@ -90,6 +90,48 @@ export const resume: Readonly<ResumeProps> = {
       start: 'Jun 2024',
       end: 'Aug 2024',
       content: ''
+    },
+    {
+      title: 'Software Engineer Freelance',
+      name: 'Arnawa Digital',
+      desc: 'Self-employed software agency',
+      location: 'Bandung, Indonesia',
+      imageUrl: '/arnawa_logo.webp',
+      href: '',
+      status: 'Part Time',
+      type: 'Remote',
+      website: 'https://arnawadigital.com/',
+      start: 'Apr 2023',
+      end: 'Sep 2024',
+      content: ''
+    },
+    {
+      title: 'English and Mathematics Teacher',
+      name: 'Rainbow Kids',
+      desc: 'Private tutoring class in Bandung.',
+      location: 'Bandung, Indonesia',
+      imageUrl: '/rainbow_kids_logo.png',
+      href: '',
+      status: 'Part Time',
+      type: 'On-Site',
+      website: '',
+      start: 'Sep 2022',
+      end: 'Apr 2023',
+      content: ''
+    },
+    {
+      title: 'Algorithm and Data Structures Practicum Assistant',
+      name: 'Informatics Laboratory Telkom University',
+      desc: '',
+      location: 'Bandung, Indonesia',
+      imageUrl: '/iflabs_logo.jpg',
+      href: '',
+      status: 'Part Time',
+      type: 'On-Site',
+      website: 'https://informatics.labs.telkomuniversity.ac.id/',
+      start: 'Sep 2022',
+      end: 'Jan 2023',
+      content: ''
     }
   ],
   educations: [
