@@ -34,6 +34,7 @@ export const resume: Readonly<ResumeProps> = {
     'Github Actions',
     'Wordpress'
   ],
+
   works: [
     {
       title: 'Software Engineer',
@@ -134,6 +135,7 @@ export const resume: Readonly<ResumeProps> = {
       content: ''
     }
   ],
+
   educations: [
     {
       title: 'Bachelor of Informatics',
@@ -172,6 +174,7 @@ export const resume: Readonly<ResumeProps> = {
       content: ''
     }
   ],
+
   organizations: [
     {
       title: 'Design and Publication Team',
@@ -200,11 +203,12 @@ export const resume: Readonly<ResumeProps> = {
       content: ''
     }
   ],
+
   projects: [
     {
       accelerator: 'Microsoft Online Hackathon 2025 (elevAIte with Dicoding)',
       name: 'Teman Anti Judi Online',
-      desc: '',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       imageUrl: '',
       href: '',
       website: '',
@@ -217,7 +221,7 @@ export const resume: Readonly<ResumeProps> = {
       accelerator:
         'International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS 2025)',
       name: 'Growth Momentum',
-      desc: '',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       imageUrl: '',
       href: '',
       website: '',
@@ -229,7 +233,7 @@ export const resume: Readonly<ResumeProps> = {
     {
       accelerator: 'Bangkit Academy 2024 By Google, GoTo, Tokopedia, Traveloka',
       name: 'StuntFree Apps',
-      desc: '',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       imageUrl: '',
       href: '',
       website: '',
@@ -239,6 +243,7 @@ export const resume: Readonly<ResumeProps> = {
       content: ''
     }
   ],
+
   achievements: [
     {
       accelerator: 'elevAIte by Microsoft Azure',
