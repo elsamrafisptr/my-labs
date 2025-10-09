@@ -34,6 +34,7 @@ export const resume: Readonly<ResumeProps> = {
     'Github Actions',
     'Wordpress'
   ],
+
   works: [
     {
       title: 'Software Engineer',
@@ -90,8 +91,51 @@ export const resume: Readonly<ResumeProps> = {
       start: 'Jun 2024',
       end: 'Aug 2024',
       content: ''
+    },
+    {
+      title: 'Software Engineer Freelance',
+      name: 'Arnawa Digital',
+      desc: 'Self-employed software agency',
+      location: 'Bandung, Indonesia',
+      imageUrl: '/arnawa_logo.webp',
+      href: '',
+      status: 'Part Time',
+      type: 'Remote',
+      website: 'https://arnawadigital.com/',
+      start: 'Apr 2023',
+      end: 'Sep 2024',
+      content: ''
+    },
+    {
+      title: 'English and Mathematics Teacher',
+      name: 'Rainbow Kids',
+      desc: 'Private tutoring class in Bandung.',
+      location: 'Bandung, Indonesia',
+      imageUrl: '/rainbow_kids_logo.png',
+      href: '',
+      status: 'Part Time',
+      type: 'On-Site',
+      website: '',
+      start: 'Sep 2022',
+      end: 'Apr 2023',
+      content: ''
+    },
+    {
+      title: 'Algorithm and Data Structures Practicum Assistant',
+      name: 'IFLabs Telkom University',
+      desc: '',
+      location: 'Bandung, Indonesia',
+      imageUrl: '/iflabs_logo.jpg',
+      href: '',
+      status: 'Part Time',
+      type: 'On-Site',
+      website: 'https://informatics.labs.telkomuniversity.ac.id/',
+      start: 'Sep 2022',
+      end: 'Jan 2023',
+      content: ''
     }
   ],
+
   educations: [
     {
       title: 'Bachelor of Informatics',
@@ -130,6 +174,7 @@ export const resume: Readonly<ResumeProps> = {
       content: ''
     }
   ],
+
   organizations: [
     {
       title: 'Design and Publication Team',
@@ -158,45 +203,47 @@ export const resume: Readonly<ResumeProps> = {
       content: ''
     }
   ],
+
   projects: [
     {
       accelerator: 'Microsoft Online Hackathon 2025 (elevAIte with Dicoding)',
       name: 'Teman Anti Judi Online',
-      desc: '',
-      imageUrl: '',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      imageUrl: '/thumbnail_no_image.jpg',
       href: '',
       website: '',
-      github: '',
+      github: 'https://github.com/elsamrafisptr',
       year: '',
-      stacks: [],
+      stacks: ['FastAPI', 'Next JS', 'PostgreSQL', 'Open AI', 'Azure'],
       content: ''
     },
     {
       accelerator:
         'International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS 2025)',
       name: 'Growth Momentum',
-      desc: '',
-      imageUrl: '',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      imageUrl: '/thumbnail_no_image.jpg',
       href: '',
       website: '',
-      github: '',
+      github: 'https://github.com/elsamrafisptr',
       year: '',
-      stacks: [],
+      stacks: ['Flask', 'PostgreSQL', 'K-Means Clustering', 'React'],
       content: ''
     },
     {
       accelerator: 'Bangkit Academy 2024 By Google, GoTo, Tokopedia, Traveloka',
       name: 'StuntFree Apps',
-      desc: '',
-      imageUrl: '',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      imageUrl: '/project_thumbnail_stuntfree.webp',
       href: '',
       website: '',
-      github: '',
+      github: 'https://github.com/elsamrafisptr',
       year: '',
-      stacks: [],
+      stacks: ['FastAPI', 'gRPC', 'PostgreSQL', 'Vertex AI', 'GCP'],
       content: ''
     }
   ],
+
   achievements: [
     {
       accelerator: 'elevAIte by Microsoft Azure',

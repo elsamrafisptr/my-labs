@@ -1,7 +1,14 @@
-import { resume } from '@/common/constants'
+import { basePath, resume } from '@/common/constants'
 import ProjectCard from '@/components/elements/project-card'
+import { slugify } from '@/lib/client-utils'
 
 const Labs = () => {
+  const projects = (resume?.projects || []).map(item => {
+    const base = `${item.name ?? ''}`
+    const slug = `labs/${slugify(base)}`
+    return { ...item, slug }
+  })
+
   return (
     <main className="flex w-full flex-col gap-12">
       <section>
@@ -9,10 +16,12 @@ const Labs = () => {
           Coming Soon
         </h3>
         <div className="mt-4 grid grid-cols-2 gap-6 md:grid-cols-3">
-          {resume.projects.slice(0, 1).map(project => (
+          {projects.slice(0, 1).map(project => (
             <ProjectCard
               key={project.name.toLocaleLowerCase().replace(' ', '-')}
               {...project}
+              imageUrl={basePath + project.imageUrl}
+              href={project.slug}
             />
           ))}
         </div>
@@ -22,10 +31,12 @@ const Labs = () => {
           Existing Experiments
         </h3>
         <div className="mt-4 grid grid-cols-2 gap-6 md:grid-cols-3">
-          {resume.projects.slice(1, resume.projects.length).map(project => (
+          {projects.slice(1, resume.projects.length).map(project => (
             <ProjectCard
               key={project.name.toLocaleLowerCase().replace(' ', '-')}
               {...project}
+              imageUrl={basePath + project.imageUrl}
+              href={project.slug}
             />
           ))}
         </div>
