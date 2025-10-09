@@ -18,11 +18,7 @@ const baseConfig: NextConfig = {
     resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json']
   },
   experimental: {
-    optimizeCss: false,
     turbopackMinify: true,
-    turbopackTreeShaking: false,
-    optimisticClientCache: false,
-    optimizeServerReact: false,
     optimizePackageImports: [
       'framer-motion',
       'next-mdx-remote',
