@@ -7,19 +7,9 @@ import DownloadButton from '@/components/elements/download-button'
 import EducationCard from '@/components/elements/edu-card'
 import OrganizationCard from '@/components/elements/org-card'
 import WorkCard from '@/components/elements/work-card'
+import { slugify } from '@/lib/client-utils'
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import { useState } from 'react'
-
-function slugify(input = '') {
-  return input
-    .normalize?.('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-}
 
 const Home = () => {
   const [showAll, setShowAll] = useState<Record<string, boolean>>({

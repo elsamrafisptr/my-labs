@@ -121,7 +121,7 @@ export const resume: Readonly<ResumeProps> = {
     },
     {
       title: 'Algorithm and Data Structures Practicum Assistant',
-      name: 'Informatics Laboratory Telkom University',
+      name: 'IFLabs Telkom University',
       desc: '',
       location: 'Bandung, Indonesia',
       imageUrl: '/iflabs_logo.jpg',
