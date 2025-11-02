@@ -1,7 +1,5 @@
 'use client'
 
-import { Analytics } from '@vercel/analytics/next'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from 'next-themes'
 
 import Footer from '../elements/footer'
@@ -14,8 +12,6 @@ export const Provider = ({ children }: { children: React.ReactNode }) => {
         <Navbar />
         {children}
         <Footer />
-        <Analytics />
-        <SpeedInsights />
       </div>
     </ThemeProvider>
   )

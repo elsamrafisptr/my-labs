@@ -2,11 +2,10 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 import { basePath, baseUrl } from '@/common/constants'
-import { CustomMDX } from '@/components/elements/custom-mdx'
-import { formatDate, getBlogPosts } from '@/lib/utils'
+import { getBlogs } from '@/lib/client-utils'
 
 export async function generateStaticParams() {
-  const posts = await getBlogPosts()
+  const posts = getBlogs()
 
   return posts.map(post => ({
     slug: post.slug
@@ -20,19 +19,14 @@ export async function generateMetadata({
 }) {
   const { slug } = await params
 
-  const posts = await getBlogPosts()
+  const posts = getBlogs()
   const post = posts.find(post => post.slug === slug)
 
   if (!post) {
     return
   }
 
-  const {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image
-  } = post.metadata
+  const { title, publishedAt: publishedTime, summary: description, image } = post
 
   const ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
@@ -63,16 +57,16 @@ export async function generateMetadata({
 export default async function Blog({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
 
-  const posts = await getBlogPosts()
+  const posts = getBlogs()
   const post = posts.find(post => post.slug === slug)
 
   if (!post) {
     notFound()
   }
 
-  const imageUrl = post.metadata.image
-    ? `${baseUrl}${post.metadata.image}`
-    : `/og?title=${encodeURIComponent(post.metadata.title)}`
+  const imageUrl = post.image
+    ? `${baseUrl}${post.image}`
+    : `/og?title=${encodeURIComponent(post.title)}`
 
   return (
     <section>
@@ -83,10 +77,10 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
+            headline: post.title,
+            datePublished: post.publishedAt,
+            dateModified: post.publishedAt,
+            description: post.summary,
             image: imageUrl,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
@@ -96,25 +90,23 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           })
         }}
       />
-      <h1 className="title text-2xl font-semibold tracking-tighter">
-        {post.metadata.title}
-      </h1>
+      <h1 className="title text-2xl font-semibold tracking-tighter">{post.title}</h1>
       <div className="mt-2 mb-8 flex items-center justify-between text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
+          {post.publishedAt}
         </p>
       </div>
-      {post.metadata.image && (
+      {post.image && (
         <Image
-          src={basePath + post.metadata.image}
-          alt={post.metadata.title}
+          src={basePath + post.image}
+          alt={post.title}
           width={1024}
           height={1024}
           className="mt-4 aspect-video w-full object-cover"
         />
       )}
       <article className="prose dark:prose-invert prose-stone mt-8">
-        <CustomMDX source={post.content} />
+        {post.content}
       </article>
     </section>
   )

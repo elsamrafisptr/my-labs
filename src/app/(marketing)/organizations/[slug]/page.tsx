@@ -1,11 +1,10 @@
 import { notFound } from 'next/navigation'
 
 import { baseUrl } from '@/common/constants'
-import { CustomMDX } from '@/components/elements/custom-mdx'
-import { formatDate, getOrganizationPosts } from '@/lib/utils'
+import { getOrganizations } from '@/lib/client-utils'
 
 export async function generateStaticParams() {
-  const posts = await getOrganizationPosts()
+  const posts = getOrganizations()
 
   return posts.map(post => ({
     slug: post.slug
@@ -19,42 +18,33 @@ export async function generateMetadata({
 }) {
   const { slug } = await params
 
-  const posts = await getOrganizationPosts()
+  const posts = getOrganizations()
   const post = posts.find(post => post.slug === slug)
 
   if (!post) {
     return
   }
 
-  const {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image
-  } = post.metadata
-
-  const ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`
-
   return {
-    title,
-    description,
+    title: post.title,
+    description: post.desc,
     openGraph: {
-      title,
-      description,
+      title: post.title,
+      description: post.desc,
       type: 'article',
-      publishedTime,
+      publishedTime: post.end,
       url: `${baseUrl}/organizations/${post.slug}`,
       images: [
         {
-          url: ogImage
+          url: post.imageUrl
         }
       ]
     },
     twitter: {
       card: 'summary_large_image',
-      title,
-      description,
-      images: [ogImage]
+      title: post.title,
+      description: post.desc,
+      images: [post.imageUrl]
     }
   }
 }
@@ -66,19 +56,15 @@ export default async function Organization({
 }) {
   const { slug } = await params
 
-  const posts = await getOrganizationPosts()
+  const posts = getOrganizations()
   const post = posts.find(post => post.slug === slug)
 
   if (!post) {
     notFound()
   }
 
-  const imageUrl = post.metadata.image
-    ? `${baseUrl}${post.metadata.image}`
-    : `/og?title=${encodeURIComponent(post.metadata.title)}`
-
   return (
-    <section>
+    <section className="h-full w-full">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -86,12 +72,12 @@ export default async function Organization({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: imageUrl,
-            url: `${baseUrl}/organizations/${post.slug}`,
+            headline: post.title,
+            datePublished: post.end,
+            dateModified: post.end,
+            description: post.desc,
+            image: post.imageUrl,
+            url: `${baseUrl}/works/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio'
@@ -100,16 +86,12 @@ export default async function Organization({
         }}
       />
       <h1 className="title text-2xl font-semibold tracking-tighter">
-        {post.metadata.title}
+        {post.title} @ {post.name}
       </h1>
       <div className="mt-2 mb-8 flex items-center justify-between text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">{post.desc}</p>
       </div>
-      <article className="prose">
-        <CustomMDX source={post.content} />
-      </article>
+      <article className="prose">{post.content}</article>
     </section>
   )
 }

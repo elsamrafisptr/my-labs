@@ -1,12 +1,12 @@
 import { baseUrl } from '@/common/constants'
-import { getBlogPosts } from '@/lib/utils'
+import { getBlogs } from '@/lib/client-utils'
 
 export const dynamic = 'force-static'
 
 export default async function sitemap() {
-  const blogs = getBlogPosts().map(post => ({
+  const blogs = getBlogs().map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.metadata.publishedAt
+    lastModified: post.publishedAt
   }))
 
   const routes = ['', '/blog'].map(route => ({

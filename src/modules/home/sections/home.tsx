@@ -7,7 +7,7 @@ import DownloadButton from '@/components/elements/download-button'
 import EducationCard from '@/components/elements/edu-card'
 import OrganizationCard from '@/components/elements/org-card'
 import WorkCard from '@/components/elements/work-card'
-import { getWorks, slugify } from '@/lib/client-utils'
+import { getEducations, getOrganizations, getWorks } from '@/lib/client-utils'
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import { useState } from 'react'
 
@@ -30,18 +30,8 @@ const Home = () => {
   }))
 
   const works = getWorks(true)
-
-  const organizations = (resume?.organizations || []).map(item => {
-    const base = `${item.title ?? ''} ${item.name ?? ''}`
-    const slug = `organizations/${slugify(base)}`
-    return { ...item, slug }
-  })
-
-  const educations = (resume?.educations || []).map(item => {
-    const base = `${item.title ?? ''} ${item.name ?? ''}`
-    const slug = `educations/${slugify(base)}`
-    return { ...item, slug }
-  })
+  const organizations = getOrganizations(true)
+  const educations = getEducations(true)
 
   const visibleWorks = showAll.works ? works : works.slice(0, SHOW_LIMIT)
   const visibleOrgs = showAll.organizations

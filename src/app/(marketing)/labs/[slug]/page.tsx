@@ -2,15 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { basePath, resume } from '@/common/constants'
-import { slugify } from '@/lib/client-utils'
+import { basePath, baseUrl } from '@/common/constants'
+import { getProjects } from '@/lib/client-utils'
 import { GithubIcon, GlobeIcon } from 'lucide-react'
 
 export async function generateStaticParams() {
-  const projects = await resume.projects
+  const projects = getProjects()
 
   return projects.map(project => ({
-    slug: slugify(project.name)
+    slug: project.slug
   }))
 }
 
@@ -21,11 +21,33 @@ export async function generateMetadata({
 }) {
   const { slug } = await params
 
-  const projects = await resume.projects
-  const project = projects.find(project => slugify(project.name) === slug)
+  const projects = getProjects()
+  const project = projects.find(project => project.slug === slug)
 
   if (!project) {
     return
+  }
+
+  return {
+    title: project.name,
+    description: project.desc,
+    openGraph: {
+      title: project.name,
+      description: project.desc,
+      type: 'article',
+      url: `${baseUrl}/labs/${project.slug}`,
+      images: [
+        {
+          url: project.imageUrl
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.name,
+      description: project.desc,
+      images: [project.imageUrl]
+    }
   }
 }
 
@@ -36,8 +58,8 @@ export default async function Project({
 }) {
   const { slug } = await params
 
-  const projects = await resume.projects
-  const project = projects.find(project => slugify(project.name) === slug)
+  const projects = getProjects()
+  const project = projects.find(project => project.slug === slug)
 
   if (!project) {
     notFound()
@@ -45,6 +67,24 @@ export default async function Project({
 
   return (
     <main className="flex w-full flex-col gap-6">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: project.name,
+            description: project.desc,
+            image: project.imageUrl,
+            url: `${baseUrl}/labs/${project.slug}`,
+            author: {
+              '@type': 'Person',
+              name: 'My Portfolio'
+            }
+          })
+        }}
+      />
       <section className="flex flex-col gap-1">
         <h1 className="title text-2xl font-semibold tracking-tighter">
           {project.name}
@@ -56,20 +96,20 @@ export default async function Project({
           {project.desc}
         </p>
         <div className="grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2">
-          <div className="flex w-full items-center gap-2 text-sm">
-            {project.stacks && project.stacks.length != 0 && (
-              <>
-                <p>Tech Stack :</p>
-                {project.stacks.map(item => (
+          <div className="flex flex-col gap-0.5">
+            <p>Tech Stack :</p>
+            <div className="flex w-full items-center gap-2 text-sm">
+              {project.stacks &&
+                project.stacks.length != 0 &&
+                project.stacks.map(item => (
                   <p
                     key={item.toLowerCase().replace(/\s+/g, '-')}
-                    className="rounded bg-stone-300 px-1.5 py-1 text-xs text-stone-800 dark:bg-stone-600 dark:text-stone-100"
+                    className="shrink-0 rounded bg-stone-300 px-1.5 py-1 text-xs text-stone-800 dark:bg-stone-600 dark:text-stone-100"
                   >
                     {item}
                   </p>
                 ))}
-              </>
-            )}
+            </div>
           </div>
           <div className="flex w-full items-center justify-end gap-6">
             {project.github && project.github != '' && (

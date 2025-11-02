@@ -1,13 +1,9 @@
 import { basePath, resume } from '@/common/constants'
 import ProjectCard from '@/components/elements/project-card'
-import { slugify } from '@/lib/client-utils'
+import { getProjects } from '@/lib/client-utils'
 
 const Labs = () => {
-  const projects = (resume?.projects || []).map(item => {
-    const base = `${item.name ?? ''}`
-    const slug = `labs/${slugify(base)}`
-    return { ...item, slug }
-  })
+  const projects = getProjects(true)
 
   return (
     <main className="flex w-full flex-col gap-12">
