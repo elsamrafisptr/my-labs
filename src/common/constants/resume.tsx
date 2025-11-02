@@ -48,7 +48,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://schnap.com.au/',
       start: 'Mar 2025',
       end: 'Now',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'Fullstack Developer',
@@ -62,7 +62,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://kaptnn.com/',
       start: 'Sep 2024',
       end: 'Aug 2025',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'Frontend Developer',
@@ -76,7 +76,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://schooltechindonesia.com/',
       start: 'Aug 2024',
       end: 'Dec 2024',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'Fullstack Developer',
@@ -90,7 +90,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://betrbeta.com/en-SG',
       start: 'Jun 2024',
       end: 'Aug 2024',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'Software Engineer Freelance',
@@ -104,7 +104,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://arnawadigital.com/',
       start: 'Apr 2023',
       end: 'Sep 2024',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'English and Mathematics Teacher',
@@ -118,7 +118,7 @@ export const resume: Readonly<ResumeProps> = {
       website: '',
       start: 'Sep 2022',
       end: 'Apr 2023',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'Algorithm and Data Structures Practicum Assistant',
@@ -132,7 +132,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://informatics.labs.telkomuniversity.ac.id/',
       start: 'Sep 2022',
       end: 'Jan 2023',
-      content: ''
+      content: <div className="h-full w-full"></div>
     }
   ],
 
@@ -147,7 +147,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://telkomuniversity.ac.id/',
       start: 'Sep 2021',
       end: 'Jan 2025',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'Cloud Computing Cohort',
@@ -159,7 +159,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://grow.google/intl/id_id/bangkit/',
       start: 'Sep 2024',
       end: 'Jan 2025',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'AWS Academy 2024 Backend Development',
@@ -171,7 +171,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://aws.dicoding.com/',
       start: 'Mar 2024',
       end: 'Sep 2024',
-      content: ''
+      content: <div className="h-full w-full"></div>
     }
   ],
 
@@ -187,7 +187,7 @@ export const resume: Readonly<ResumeProps> = {
       website: '',
       start: 'Oct 2021',
       end: 'Aug 2022',
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       title: 'Design and Motion Video Division',
@@ -200,7 +200,7 @@ export const resume: Readonly<ResumeProps> = {
       website: 'https://www.instagram.com/telu_edumovement/',
       start: 'Nov 2021',
       end: 'Mar 2022',
-      content: ''
+      content: <div className="h-full w-full"></div>
     }
   ],
 
@@ -215,7 +215,7 @@ export const resume: Readonly<ResumeProps> = {
       github: 'https://github.com/elsamrafisptr',
       year: '',
       stacks: ['FastAPI', 'Next JS', 'PostgreSQL', 'Open AI', 'Azure'],
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       accelerator:
@@ -228,7 +228,7 @@ export const resume: Readonly<ResumeProps> = {
       github: 'https://github.com/elsamrafisptr',
       year: '',
       stacks: ['Flask', 'PostgreSQL', 'K-Means Clustering', 'React'],
-      content: ''
+      content: <div className="h-full w-full"></div>
     },
     {
       accelerator: 'Bangkit Academy 2024 By Google, GoTo, Tokopedia, Traveloka',
@@ -240,7 +240,7 @@ export const resume: Readonly<ResumeProps> = {
       github: 'https://github.com/elsamrafisptr',
       year: '',
       stacks: ['FastAPI', 'gRPC', 'PostgreSQL', 'Vertex AI', 'GCP'],
-      content: ''
+      content: <div className="h-full w-full"></div>
     }
   ],
 
@@ -309,5 +309,7 @@ export const resume: Readonly<ResumeProps> = {
       credential: ''
     }
   ],
-  competitions: []
+  competitions: [],
+
+  blogs: []
 } as const

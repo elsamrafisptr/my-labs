@@ -23,7 +23,7 @@ interface WorkProps {
   website: string
   start: string
   end: string
-  content: string
+  content: ReactNode
 }
 
 interface EducationProps {
@@ -36,7 +36,7 @@ interface EducationProps {
   website: string
   start: string
   end: string
-  content: string
+  content: ReactNode
 }
 
 interface OrganizationProps {
@@ -50,7 +50,7 @@ interface OrganizationProps {
   website: string
   start: string
   end: string
-  content: string
+  content: ReactNode
 }
 
 interface ProjectProps {
@@ -63,7 +63,7 @@ interface ProjectProps {
   github: string
   year: string
   stacks: string[]
-  content: string
+  content: ReactNode
 }
 
 interface AchievementProps {
@@ -86,6 +86,14 @@ interface CompetitionProps {
   year: string
 }
 
+interface BlogProps {
+  title: string
+  publishedAt: string
+  summary?: string
+  image?: string
+  content?: ReactNode
+}
+
 interface ResumeProps {
   name: string
   role: string
@@ -106,6 +114,8 @@ interface ResumeProps {
   projects: ProjectProps[]
   achievements: AchievementProps[]
   competitions: CompetitionProps[]
+
+  blogs: BlogProps[]
 }
 
 export type {
@@ -116,5 +126,6 @@ export type {
   OrganizationProps,
   ProjectProps,
   AchievementProps,
+  BlogProps,
   ResumeProps
 }

@@ -7,7 +7,7 @@ import DownloadButton from '@/components/elements/download-button'
 import EducationCard from '@/components/elements/edu-card'
 import OrganizationCard from '@/components/elements/org-card'
 import WorkCard from '@/components/elements/work-card'
-import { slugify } from '@/lib/client-utils'
+import { getWorks, slugify } from '@/lib/client-utils'
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import { useState } from 'react'
 
@@ -29,11 +29,7 @@ const Home = () => {
     name
   }))
 
-  const works = (resume?.works || []).map(item => {
-    const base = `${item.title ?? ''} ${item.name ?? ''}`
-    const slug = `works/${slugify(base)}`
-    return { ...item, slug }
-  })
+  const works = getWorks(true)
 
   const organizations = (resume?.organizations || []).map(item => {
     const base = `${item.title ?? ''} ${item.name ?? ''}`
