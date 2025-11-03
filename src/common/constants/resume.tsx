@@ -311,5 +311,19 @@ export const resume: Readonly<ResumeProps> = {
   ],
   competitions: [],
 
-  blogs: []
+  blogs: [
+    {
+      title: 'Hello World!',
+      publishedAt: '2025-10-01',
+      summary: 'Hello World! This is my first time writing for a blog post.',
+      image: '/blog_thumnail_hello_world.png',
+      content: <div className="h-full w-full"></div>
+    },
+    {
+      title: 'How I Received a Job Offer and a Quick Promotion from a Remote Company',
+      publishedAt: '2025-10-08',
+      image: '/blog_thumnail_job_offer_and_quick_promotion.jpg',
+      content: <div className="h-full w-full"></div>
+    }
+  ]
 } as const
