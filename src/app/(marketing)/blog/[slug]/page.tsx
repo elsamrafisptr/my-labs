@@ -69,7 +69,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     : `/og?title=${encodeURIComponent(post.title)}`
 
   return (
-    <section>
+    <section className="h-full w-full">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -105,7 +105,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           className="mt-4 aspect-video w-full object-cover"
         />
       )}
-      <article className="prose dark:prose-invert prose-stone mt-8">
+      <article className="prose dark:prose-invert prose-stone mt-8 text-stone-600 dark:text-stone-300">
         {post.content}
       </article>
     </section>

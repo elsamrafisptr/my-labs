@@ -92,11 +92,11 @@ export default async function Project({
         <h2 className="text-stone-600 dark:text-stone-300">@ {project.accelerator}</h2>
       </section>
       <section className="flex w-full flex-col gap-4">
-        <p className="text-justify text-xs text-stone-600 md:text-base dark:text-stone-300">
+        <p className="text-justify text-sm text-stone-600 md:text-base dark:text-stone-300">
           {project.desc}
         </p>
-        <div className="grid w-full grid-cols-1 items-center gap-4 md:grid-cols-2">
-          <div className="flex flex-col gap-0.5">
+        <div className="grid w-full grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-4">
+          <div className="flex flex-col gap-1">
             <p>Tech Stack :</p>
             <div className="flex w-full items-center gap-2 text-sm">
               {project.stacks &&
@@ -111,7 +111,7 @@ export default async function Project({
                 ))}
             </div>
           </div>
-          <div className="flex w-full items-center justify-end gap-6">
+          <div className="flex w-full items-center justify-start gap-6 md:justify-end">
             {project.github && project.github != '' && (
               <span className="flex cursor-pointer items-center gap-2 text-stone-600 hover:text-stone-800 dark:text-stone-300 hover:dark:text-stone-50">
                 <GithubIcon size={20} />
