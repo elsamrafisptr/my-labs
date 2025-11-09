@@ -6,7 +6,6 @@ const baseConfig: NextConfig = {
   output: 'export',
   reactStrictMode: true,
   poweredByHeader: false,
-  transpilePackages: ['next-mdx-remote'],
   serverExternalPackages: [],
   images: {
     unoptimized: true
@@ -19,13 +18,10 @@ const baseConfig: NextConfig = {
   },
   experimental: {
     turbopackMinify: true,
-    optimizePackageImports: [
-      'framer-motion',
-      'next-mdx-remote',
-      'lucide-react',
-      'react',
-      'react-dom'
-    ],
+    optimisticClientCache: true,
+    webpackMemoryOptimizations: true,
+    turbopackRemoveUnusedExports: true,
+    optimizePackageImports: ['motion', 'lucide-react', 'react', 'react-dom'],
     serverMinification: false
   }
 }

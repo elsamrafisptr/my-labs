@@ -35,9 +35,9 @@ const HomePresenter = () => {
     <section className="flex w-full flex-col gap-12">
       {' '}
       <div>
-        <h3 className="text-md mb-6 font-semibold text-stone-600 dark:text-stone-50">
+        <h1 className="text-md mb-6 font-semibold text-stone-600 dark:text-stone-50">
           Experiences
-        </h3>
+        </h1>
         <div className="grid grid-cols-1 gap-6">
           {visibleWorks.map(item => {
             return (
@@ -64,9 +64,9 @@ const HomePresenter = () => {
         </div>
       </div>
       <div>
-        <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
+        <h1 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
           Organizations
-        </h3>
+        </h1>
         <div className="grid grid-cols-1 gap-6">
           {visibleOrgs.map(item => {
             return (
@@ -93,9 +93,9 @@ const HomePresenter = () => {
         </div>
       </div>
       <div>
-        <h3 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
+        <h1 className="text-md mb-6 font-semibold text-stone-700 dark:text-stone-50">
           Educations
-        </h3>
+        </h1>
         <div className="grid grid-cols-1 gap-6">
           {visibleEdu.map(item => {
             return (
@@ -122,9 +122,9 @@ const HomePresenter = () => {
         </div>
       </div>
       <div>
-        <h3 className="text-md mb-4 font-semibold text-stone-700 dark:text-stone-50">
+        <h1 className="text-md mb-4 font-semibold text-stone-700 dark:text-stone-50">
           Skills
-        </h3>
+        </h1>
         <div className="flex flex-wrap items-center gap-2">
           {skills.map(item => {
             return (
