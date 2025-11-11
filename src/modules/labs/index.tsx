@@ -1,4 +1,4 @@
-import { basePath, resume } from '@/common/constants'
+import { resume } from '@/common/constants'
 import ProjectCard from '@/components/elements/project-card'
 import { getProjects } from '@/lib/client-utils'
 
@@ -16,7 +16,7 @@ const Labs = () => {
             <ProjectCard
               key={project.name.toLocaleLowerCase().replace(' ', '-')}
               {...project}
-              imageUrl={basePath + project.imageUrl}
+              imageUrl={project.imageUrl}
               href={project.slug}
             />
           ))}
@@ -31,7 +31,7 @@ const Labs = () => {
             <ProjectCard
               key={project.name.toLocaleLowerCase().replace(' ', '-')}
               {...project}
-              imageUrl={basePath + project.imageUrl}
+              imageUrl={project.imageUrl}
               href={project.slug}
             />
           ))}

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { basePath, navItems, resume } from '@/common/constants'
+import { navItems, resume } from '@/common/constants'
 import { cn } from '@/lib/client-utils'
 import { motion, useReducedMotion } from 'motion/react'
 import { memo, useEffect, useMemo, useState } from 'react'
@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link href="/" className="relative flex items-center py-2">
           <Avatar>
             <AvatarImage
-              src={basePath + resume.avatarUrl}
+              src={resume.avatarUrl}
               className="aspect-square rounded-full border border-stone-700 shadow-md shadow-stone-700/20 dark:border-stone-200 dark:shadow-stone-200/20"
               alt="avatar"
             />

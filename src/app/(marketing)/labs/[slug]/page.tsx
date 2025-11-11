@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { basePath, baseUrl } from '@/common/constants'
+import { baseUrl } from '@/common/constants'
 import { getProjects } from '@/lib/client-utils'
 import { GithubIcon, GlobeIcon } from 'lucide-react'
 
@@ -134,7 +134,7 @@ export default async function Project({
       <section>
         {project.imageUrl && (
           <Image
-            src={basePath + project.imageUrl}
+            src={project.imageUrl}
             alt={project.name}
             height={1024}
             width={1024}

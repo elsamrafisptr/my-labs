@@ -1,4 +1,3 @@
-import { basePath } from '@/common/constants'
 import BlogCard from '@/components/elements/blog-card'
 import { getBlogs } from '@/lib/client-utils'
 
@@ -31,7 +30,7 @@ const Blog = () => {
                     name={post.title}
                     href={post.slug}
                     date={post.publishedAt}
-                    imgUrl={basePath + post.image}
+                    imgUrl={post.image}
                   />
                 )
               })

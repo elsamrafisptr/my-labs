@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
-import { basePath, baseUrl } from '@/common/constants'
+import { baseUrl } from '@/common/constants'
 import { getBlogs } from '@/lib/client-utils'
 
 export async function generateStaticParams() {
@@ -98,7 +98,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
       </div>
       {post.image && (
         <Image
-          src={basePath + post.image}
+          src={post.image}
           alt={post.title}
           width={1024}
           height={1024}

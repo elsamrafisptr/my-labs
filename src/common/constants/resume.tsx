@@ -2,16 +2,28 @@ import Link from 'next/link'
 
 import { ResumeProps } from '../types'
 
+export const baseImageUrl = 'https://ik.imagekit.io/a5rn4awa3digi2tal1/portfolio'
+export const worksImageUrl = baseImageUrl + '/logos/works'
+export const organizationsImageUrl = baseImageUrl + '/logos/organizations'
+export const educationsImageUrl = baseImageUrl + '/logos/educations'
+
+export const blogsImageUrl = baseImageUrl + '/blogs'
+export const projectsImageUrl = baseImageUrl + '/projects'
+
+export const notFoundImageUrl = baseImageUrl + '/thumbnail_no_image.jpg'
+export const profileImageUrl = baseImageUrl + '/profile.webp'
+export const resumeAttachmentUrl = baseImageUrl + '/resume.pdf'
+
 export const resume: Readonly<ResumeProps> = {
   name: 'Elsam Rafi Saputra',
   role: 'Remote Software Engineer',
   initials: 'E',
-  url: 'https://elsamrafisptr-portfolio.vercel.app',
+  url: 'https://elsamrafisptr.github.io/my-labs/',
   location: 'Bandung, Indonesia',
-  locationLink: 'https://',
+  locationLink: '',
   description:
     'Just a software engineer with a strong focus on design, full-stack, and marketing. Broader challenges transitioned me became passionate about entrepreneurship, software engineering, and artificial intelligence (AI).',
-  avatarUrl: '/profile.webp',
+  avatarUrl: profileImageUrl,
 
   navbar: [],
   footer: [],
@@ -43,7 +55,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'SCHNAP',
       desc: "Australia's premier electrical wholesaler and supplies",
       location: 'Kingsgrove, Australia',
-      imageUrl: '/schnap_logo.jpeg',
+      imageUrl: worksImageUrl + '/schnap_logo.jpeg',
       href: '',
       status: 'Full Time',
       type: 'Remote',
@@ -57,7 +69,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'KAP TNN',
       desc: ' Indonesia’s registered public accounting firm partner of BOKS International',
       location: 'South Jakarta, Indonesia',
-      imageUrl: '/kaptnn_logo.jpeg',
+      imageUrl: worksImageUrl + '/kaptnn_logo.jpeg',
       href: '',
       status: 'Full Time',
       type: 'Remote',
@@ -71,7 +83,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'School Tech Indonesia',
       desc: 'Digital school management startup',
       location: 'Malang, Indonesia',
-      imageUrl: '/schooltech_logo.jpeg',
+      imageUrl: worksImageUrl + '/schooltech_logo.jpeg',
       href: '',
       status: 'Full Time',
       type: 'Remote',
@@ -85,7 +97,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'Betr Beta',
       desc: 'Software agency',
       location: 'Anson Road, Singapore',
-      imageUrl: '/betrbeta_logo.jpeg',
+      imageUrl: worksImageUrl + '/betrbeta_logo.jpeg',
       href: '',
       status: 'Part Time',
       type: 'Remote',
@@ -99,7 +111,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'Arnawa Digital',
       desc: 'Self-employed software agency',
       location: 'Bandung, Indonesia',
-      imageUrl: '/arnawa_logo.webp',
+      imageUrl: worksImageUrl + '/arnawa_logo.webp',
       href: '',
       status: 'Part Time',
       type: 'Remote',
@@ -113,7 +125,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'Rainbow Kids',
       desc: 'Private tutoring class in Bandung.',
       location: 'Bandung, Indonesia',
-      imageUrl: '/rainbow_kids_logo.png',
+      imageUrl: worksImageUrl + '/rainbow_kids_logo.png',
       href: '',
       status: 'Part Time',
       type: 'On-Site',
@@ -127,7 +139,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'IFLabs Telkom University',
       desc: '',
       location: 'Bandung, Indonesia',
-      imageUrl: '/iflabs_logo.jpg',
+      imageUrl: worksImageUrl + '/iflabs_logo.jpg',
       href: '',
       status: 'Part Time',
       type: 'On-Site',
@@ -144,7 +156,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'Telkom University',
       score: '(GPA 3.77/4.00) - Cumlaude',
       location: 'Bandung, Indonesia',
-      imageUrl: '/telu_logo.jpeg',
+      imageUrl: educationsImageUrl + '/telu_logo.jpeg',
       href: '',
       website: 'https://telkomuniversity.ac.id/',
       start: 'Sep 2021',
@@ -156,7 +168,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'Bangkit Academy 2024',
       score: '(A, 87/100)',
       location: 'Jakarta, Indonesia',
-      imageUrl: '/bangkit_logo.jpeg',
+      imageUrl: educationsImageUrl + '/bangkit_logo.jpeg',
       href: '',
       website: 'https://grow.google/intl/id_id/bangkit/',
       start: 'Sep 2024',
@@ -168,7 +180,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'AWS Backend Academy',
       score: '(A, 100%)',
       location: 'Jakarta, Indonesia',
-      imageUrl: '/aws_logo.png',
+      imageUrl: educationsImageUrl + '/aws_logo.png',
       href: '',
       website: 'https://aws.dicoding.com/',
       start: 'Mar 2024',
@@ -183,7 +195,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'TelU Edu Movement',
       desc: 'Social & Education',
       location: 'Bandung, Indonesia',
-      imageUrl: '/team_logo.jpeg',
+      imageUrl: organizationsImageUrl + '/team_logo.jpeg',
       href: '',
       type: 'On-Site',
       website: '',
@@ -196,7 +208,7 @@ export const resume: Readonly<ResumeProps> = {
       name: 'Menebarmanfaat.id',
       desc: 'Social & Personal Development',
       location: 'Bandung, Indonesia',
-      imageUrl: '/menebarmanfaat_logo.jpeg',
+      imageUrl: organizationsImageUrl + '/menebarmanfaat_logo.jpeg',
       href: '',
       type: 'Remote',
       website: 'https://www.instagram.com/telu_edumovement/',
@@ -211,7 +223,7 @@ export const resume: Readonly<ResumeProps> = {
       accelerator: 'Microsoft Online Hackathon 2025 (elevAIte with Dicoding)',
       name: 'Teman Anti Judi Online',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      imageUrl: '/thumbnail_no_image.jpg',
+      imageUrl: notFoundImageUrl,
       href: '',
       website: '',
       github: 'https://github.com/elsamrafisptr',
@@ -224,7 +236,7 @@ export const resume: Readonly<ResumeProps> = {
         'International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS 2025)',
       name: 'Growth Momentum',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      imageUrl: '/thumbnail_no_image.jpg',
+      imageUrl: notFoundImageUrl,
       href: '',
       website: '',
       github: 'https://github.com/elsamrafisptr',
@@ -236,7 +248,7 @@ export const resume: Readonly<ResumeProps> = {
       accelerator: 'Bangkit Academy 2024 By Google, GoTo, Tokopedia, Traveloka',
       name: 'StuntFree Apps',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      imageUrl: '/project_thumbnail_stuntfree.webp',
+      imageUrl: projectsImageUrl + '/project_thumbnail_stuntfree.webp',
       href: '',
       website: '',
       github: 'https://github.com/elsamrafisptr',
@@ -318,7 +330,7 @@ export const resume: Readonly<ResumeProps> = {
       title: 'Hello World!',
       publishedAt: '2025-10-01',
       summary: 'Hello World! This is my first time writing for a blog post.',
-      image: '/blog_thumnail_hello_world.png',
+      image: blogsImageUrl + '/blog_thumnail_hello_world.png',
       content: (
         <div className="flex h-full w-full flex-col gap-6">
           <p className="text-justify">
@@ -347,7 +359,7 @@ afraid of doing things imperfectly.`}
     {
       title: 'How I Received a Job Offer and a Quick Promotion from a Remote Company',
       publishedAt: '2025-10-08',
-      image: '/blog_thumnail_job_offer_and_quick_promotion.jpg',
+      image: blogsImageUrl + '/blog_thumnail_job_offer_and_quick_promotion.jpg',
       content: (
         <div className="flex h-full w-full flex-col gap-8">
           <div className="flex h-full w-full flex-col gap-3">

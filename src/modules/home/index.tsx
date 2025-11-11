@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { basePath, footerItems, resume } from '@/common/constants'
+import { footerItems, resume, resumeAttachmentUrl } from '@/common/constants'
 import DownloadButton from '@/components/elements/download-button'
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 
@@ -70,7 +70,7 @@ const Home = () => {
             </li>
           </ul>
           <DownloadButton
-            fileUrl={basePath + '/resume.pdf'}
+            fileUrl={resumeAttachmentUrl}
             fileName={`${resume.name} - ${resume.role} Resume`}
           />
         </div>

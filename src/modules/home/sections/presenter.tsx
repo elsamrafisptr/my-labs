@@ -1,6 +1,6 @@
 'use client'
 
-import { basePath, resume } from '@/common/constants'
+import { resume } from '@/common/constants'
 import EducationCard from '@/components/elements/edu-card'
 import OrganizationCard from '@/components/elements/org-card'
 import WorkCard from '@/components/elements/work-card'
@@ -44,7 +44,7 @@ const HomePresenter = () => {
               <WorkCard
                 key={item.name.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
-                imageUrl={basePath + item.imageUrl}
+                imageUrl={item.imageUrl}
                 href={item.slug}
               />
             )
@@ -73,7 +73,7 @@ const HomePresenter = () => {
               <OrganizationCard
                 key={item.title.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
-                imageUrl={basePath + item.imageUrl}
+                imageUrl={item.imageUrl}
                 href={item.slug}
               />
             )
@@ -102,7 +102,7 @@ const HomePresenter = () => {
               <EducationCard
                 key={item.name.toLocaleLowerCase().replace(' ', '-')}
                 {...item}
-                imageUrl={basePath + item.imageUrl}
+                imageUrl={item.imageUrl}
                 href={item.slug}
               />
             )
